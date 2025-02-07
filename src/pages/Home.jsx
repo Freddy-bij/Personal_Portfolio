@@ -1,10 +1,12 @@
+import PrensentationSec from "../Components/PrensentationSec"
 import WlcmSection from "../Components/WlcmSection"
 
 
 const Home = () => {
   return (
-    <div className="bg-black h-screen text-white">
+    <div >
         <WlcmSection/>
+        <PrensentationSec/>
         
     </div>
   )
