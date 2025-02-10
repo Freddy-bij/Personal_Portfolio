@@ -4,7 +4,7 @@ import Home from './pages/Home'
 
 const App = () => {
   return (
-     <>
+     <div className='bg-black text-white'>
      
      <BrowserRouter>
      <Routes>
@@ -12,7 +12,7 @@ const App = () => {
      </Routes>
      
      </BrowserRouter>
-     </>
+     </div>
   )
 }
 

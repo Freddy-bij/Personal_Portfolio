@@ -1,6 +1,7 @@
 
 
 import SectAbout from './SectAbout'
+import SectContact from './SectContact'
 import SectSkills from './SectSkills'
 
 
@@ -9,6 +10,7 @@ const PrensentationSec = () => {
     <div className=" ">
       <SectAbout/>
       <SectSkills/>
+      <SectContact/>
     </div>
   )
 }
