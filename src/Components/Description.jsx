@@ -9,7 +9,7 @@ const Description = () => {
       <div className=" mt-20  flex justify-center font-[sofia]">
         <div className="">
           <h1 className="text-center text-[#ff3f34] text-3xl uppercase font-bold  ">full stack web developper</h1>
-          <p className="w-130 mt-14 text-xl "> I am a software developer i strive to showcase my skills between logic and creativity currently immersed in the dynamic world of web development </p>
+          <p className="w-130 mt-14 text-xl ">   Hello!👋  I am a junior web developer passionate about creating modern and efficient sites. Curious and motivated, I learn every day to master the best web technologies to design interactive and fluid experiences.  </p>
         </div>
       </div>
 
@@ -19,7 +19,7 @@ const Description = () => {
           <FaArrowDown />
         </div>
       </div>
-
+ 
     </div>
   )
 }
