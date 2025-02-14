@@ -1,7 +1,7 @@
 import freddy from "../images/freddy prof.png"
 const SectAbout = () => {
   return (
-    <div className="bg-black text-white w-[70%]  font-[sofia] mx-auto">
+    <div className=" w-[70%]  font-[sofia] mx-auto">
 
       <div className="grid grid-cols-2 mt-20">
         <div className="flex flex-col ">

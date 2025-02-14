@@ -11,7 +11,7 @@ const SectSkills = () => {
     <div className="w-[70%] mx-auto  font-[sofia] my-30">
         <h1 className="text-[#ff3f34] uppercase font-bold text-2xl">Skills</h1>
      <div className="flex justify-center">
-      <div className=" grid grid-cols-7 gap-10 ">
+      <div className=" grid grid-cols-7 text-white gap-10 ">
         <img src={htlm} alt="" className="w-20 h-20"/>
         <img src={css} alt="" className="w-20 h-20"/>
         <img src={figma} alt="" className="w-20 h-20"/>

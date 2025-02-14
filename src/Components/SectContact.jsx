@@ -6,7 +6,7 @@ const SectContact = () => {
        <h1 className="text-[#ff3f34] text-2xl font-bold uppercase " > contact Me</h1>
        <div className="flex justify-center py-4 ">
  
-        <div className="bg-gray-500/10 rounded-xl text-xl py-5 px-4 w-96 ">
+        <div className="bg-gray-500 rounded-xl text-xl py-5 px-4 w-96 ">
            
                 <label>User Name</label><br></br>
                 <input type="text" placeholder="Enter user name" className="outline-none border-b-2 border-[#ff3f34] pb-1 mb-1 pl-1 w-full" /><br></br>
