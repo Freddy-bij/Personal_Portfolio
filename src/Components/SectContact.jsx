@@ -3,7 +3,7 @@
 const SectContact = () => {
   return (
     <div className="w-[70%] mx-auto font-[sofia] p-5">
-       <h1 className="text-[#ff3f34] text-2xl font-bold uppercase " > contact Me</h1>
+       <h1 className="text-[#ff3f34] text-2xl font-bold uppercase md:text-start text-center" > contact Me</h1>
        <div className="flex justify-center py-4 ">
  
         <div className="bg-gray-500 rounded-xl text-xl py-5 px-4 w-96 ">
