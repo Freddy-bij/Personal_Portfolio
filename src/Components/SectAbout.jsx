@@ -7,7 +7,7 @@ const SectAbout = () => {
         <div >
           <div >
             <h1 className="text-[#ff3f34] text-2xl uppercase font-bold  pb-3 md:text-start text-center " >About Me</h1>
-            <p className="sm:w-md text-xl ">Passionate about creating elegant solutions, I am doing research to evolve my permanence in software development. I dedicate all my time to creating dynamic and modern websites, working on different projects to increase my skills.</p>
+            <p className=" text-xl ">I am a passionate full stack developer with a degree in Business Management and Computer Science with 1 year of web development training in front end and backend. My expertise lies in leveraging cutting edge technologies such as React JS, node js and various UI frameworks including, Tailwind css, Chachra UI and antdesign. My ability also lies in designing seamless UIs and components that align perfectly with the desired aesthetics, creating responsive websites that gracefully adapt to any device. My skills also extend to creating the data in the competent database. ensuring the seamless flow of data between the front-end and the back-end. Moreover, I write the code in a clean and well-structured manner that not only works flawlessly but also improves the overall maintainability of the projects..</p>
           </div>
 
         </div>
