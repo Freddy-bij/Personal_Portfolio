@@ -1,9 +1,11 @@
+import { FaGithub } from "react-icons/fa6"
 import freddy from "../images/freddy prof.png"
+import { Link } from "react-router"
 const SectAbout = () => {
   return (
-    <div className=" w-[70%]  font-[sofia] mx-auto">
+    <div className=" w-[70%]  font-[sofia] mx-auto bg-[url('./public/images/imgremov.png')] bg-no-repeat bg-center sm:bg-none ">
 
-      <div className="grid xl:grid-cols-2 mt-20">
+      <div className="grid xl:grid-cols-2 mt-20  bg-black/20 p-2 rounded-sm sm:bg-none ">
         <div >
           <div >
             <h1 className="text-[#ff3f34] text-2xl uppercase font-bold  pb-3 md:text-start text-center " >About Me</h1>
@@ -12,15 +14,18 @@ const SectAbout = () => {
 
         </div>
 
-        <div className="flex justify-center">
-          <div className="    md:w-90 md:h-90">
-            <img src={freddy} alt={freddy} className="w-full h-full md:rounded-full" />
+        <div className=" flex justify-center">
+          <div className="   hidden sm:flex sm:w-90 h-90">
+            <img src={freddy} alt={freddy} className="w-full h-full sm:rounded-full" />
           </div>
 
         </div>
 
       </div>
-
+    <div className="flex gap-4 mt-3">
+      <button className="border px-3 py-1 rounded-sm font-bold hover:bg-[#ff3f34] hover-border-none">Hire me</button>
+     <Link to="https://github.com/Freddy-bij" target="_blank"> <button className="bg-[#ff3f34] px-3 py-1 rounded-sm font-bold text-black  hover:border hover:bg-black flex items-center gap-1 hover:text-white  "> <FaGithub /> Find me</button></Link>
+    </div>
 
     </div>
   )
