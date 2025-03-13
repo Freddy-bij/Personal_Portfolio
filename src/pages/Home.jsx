@@ -1,4 +1,4 @@
-import Footer from "../Components/Footer"
+// import Footer from "../Components/Footer"
 import PrensentationSec from "../Components/PrensentationSec"
 import WlcmSection from "../Components/WlcmSection"
 
@@ -8,7 +8,7 @@ const Home = () => {
     <div >
         <WlcmSection/>
         <PrensentationSec/>
-        <Footer/>
+        {/* <Footer/> */}
         
     </div>
   )
