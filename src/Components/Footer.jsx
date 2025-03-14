@@ -22,12 +22,9 @@ const Footer = () => {
               <div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaInstagram /></div>
               <div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaFacebookF /></div>
             </div>
-
           </div>
-
         </div>
         <div className="grid md:grid-cols-2  justify-center">
-
           <div className=" md:flex justify-center">
             <div>
               <h1 className="text-[#ff3f34] capitalize font-bold text-2xl">custom menu</h1>
@@ -38,7 +35,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-
           <div className="flex justify-center">
              <div>
             <h1 className="text-[#ff3f34] capitalize font-bold text-2xl">contact info</h1>
@@ -49,14 +45,8 @@ const Footer = () => {
             </ul>
           </div>
           </div>
-
-         
-
         </div>
-
-
       </div>
-
       <div className="sm:w-[70%] sm:mx-auto text-center text-sm pt-4 ">
 
         <p>All right Reserved&copy; {new Date().getFullYear()}. freddy-b_porfolio </p>
