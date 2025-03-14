@@ -21,7 +21,7 @@ const SectContact = () => {
       );
   };
   return (
-    <div className="w-[70%] mx-auto font-[sofia] p-5">
+    <div className="sm:w-[70%] sm:mx-auto font-[sofia] m-5">
        <h1 className="text-[#ff3f34] text-2xl font-bold uppercase md:text-start text-center" > contact Me</h1>
        <div className="flex justify-center py-4 ">
  

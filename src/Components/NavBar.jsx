@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <div className="bg-balck font-[sofia] py-6">
 
-      <nav className=" flex justify-between bg-gray-500 text-black items-center py-1  px-1 sm:w-[70%] sm:mx-auto  mx-10 rounded-[30px] shadow-xl   ">
+      <nav className=" flex justify-between bg-gray-500 text-black items-center py-1  px-1 sm:w-[70%] sm:mx-auto  mx-4 rounded-[30px] shadow-xl   ">
         <div className="flex items-center">
           <div className="w-10 h-10 " >
             <img src={image} alt="" className="rounded-full w-full h-full" />

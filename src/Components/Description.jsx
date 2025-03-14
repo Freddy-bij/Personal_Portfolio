@@ -2,7 +2,7 @@ import { FaArrowDown } from "react-icons/fa6";
 
 const Description = () => {
   return (
-    <div className='w-[70%]  mx-auto'>
+    <div className='sm:w-[70%]  sm:mx-auto mx-4'>
       <div className="  sm:text-3xl uppercase mt-30 font-[sofia]">
         <h1 className="font-bold text-center sm:text-start">welcome to my portfolio</h1>
       </div>

@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className=" bg-gray-500  rounded-xl font-[sofia] py-10 text-xl ">
 
-      <div className="w-[70%] mx-auto  border-b-1  pb-10 ">
+      <div className="sm:w-[70%] sm:mx-auto  border-b-1  pb-10 ">
         <div className="flex justify-center">
           <div >
             <div className="flex items-center" >
