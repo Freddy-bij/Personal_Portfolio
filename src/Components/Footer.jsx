@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className=" bg-gray-500  rounded-xl font-[sofia] py-10 text-xl ">
 
-      <div className="sm:w-[70%] sm:mx-auto  border-b-1  pb-10 ">
+      <div className="sm:w-[70%] sm:mx-auto   border-b-1  pb-10 ">
         <div className="flex justify-center">
           <div >
             <div className="flex items-center" >
@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="flex justify-center">
              <div>
             <h1 className="text-[#ff3f34] capitalize font-bold text-2xl">contact info</h1>
-            <ul className="pl-6 font-semibold  pt-2">
+            <ul className="sm:pl-6 font-semibold  pt-2">
               <div className="flex items-center gap-2 pb-4">  <div className="w-8 h-8  bg-[#ff2f34] flex items-center justify-center rounded-full "><FaPhone /></div> <li className="hover:underline hover:underline-offset-6 hover:text-[#ff3f34] ">+250792404909</li> </div>
               <div className="flex items-center gap-2 pb-4">  <div className="w-8 h-8  bg-[#ff2f34] flex items-center justify-center rounded-full "><MdEmail /></div><li className="hover:underline hover:underline-offset-6 hover:text-[#ff3f34]  ">freddybijanja31@gmail.com</li></div>
               <div className="flex items-center gap-2 ">  <div className="w-8 h-8  bg-[#ff2f34] flex items-center justify-center rounded-full "><FaLinkedinIn /></div><li className="hover:underline hover:underline-offset-6 hover:text-[#ff3f34] "> freddy-bij</li></div>
@@ -57,9 +57,9 @@ const Footer = () => {
 
       </div>
 
-      <div className="w-[70%] mx-auto text-center text-sm pt-4 ">
+      <div className="sm:w-[70%] sm:mx-auto text-center text-sm pt-4 ">
 
-        <p>All right Reserved&copy; {new Date().getFullYear()}, freddy-b_porfolio </p>
+        <p>All right Reserved&copy; {new Date().getFullYear()}. freddy-b_porfolio </p>
       </div>
     </div>
   )
