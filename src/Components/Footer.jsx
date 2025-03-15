@@ -2,6 +2,7 @@ import { FaFacebookF, FaGithub, FaInstagram, FaPhone } from "react-icons/fa6"
 import image from "../images/imag3.png"
 import { FaLinkedinIn } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
+import { Link } from "react-router"
 
 const Footer = () => {
   return (
@@ -11,16 +12,16 @@ const Footer = () => {
         <div className="flex justify-center">
           <div >
             <div className="flex items-center" >
-              <div className="w-20 h-20  ">
+              <div className="w-20 h-20">
                 <img src={image} alt="" className="h-full w-full rounded-full " />
               </div>
               <h1 className=" text-xl font-semibold">Freddy-<span className="text-2xl font-bold text-[#ff3f34]">B</span></h1>
             </div>
             <div className="flex  gap-5">
-              <div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaGithub /></div>
-              <div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaLinkedinIn /></div>
-              <div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaInstagram /></div>
-              <div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaFacebookF /></div>
+             <Link to="https://github.com/Freddy-bij" target="_blank"> <div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaGithub /></div></Link>
+             <Link to="https://www.linkedin.com/in/freddy-bijanja-054b3031a/?trk=li_LOL_DA_global_careers_jobsgtm_otwGeneral_res_Sep2023_dav2" target="_blank"><div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaLinkedinIn /></div></Link>  
+             <Link to="https://www.instagram.com/freddybijanja31/" target="_blank"> <div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaInstagram /></div></Link> 
+             <Link to="https://www.facebook.com/profile.php?id=61559846249127&sk=about" target="_blank"><div className="bg-[#ff3f34] w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#ff3f34]"><FaFacebookF /></div></Link>  
             </div>
           </div>
         </div>
