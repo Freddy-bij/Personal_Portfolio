@@ -12,7 +12,7 @@ const NavBar = () => {
   return (
     <div className="bg-balck font-[sofia] py-6">
 
-      <nav className=" flex justify-between bg-gray-900 text-black- items-center py-1  px-1 sm:w-[70%] sm:mx-auto  mx-4 rounded-[30px] shadow-xl   ">
+      <nav className=" flex justify-between bg-gray-900 text-white items-center py-1  px-1 sm:w-[70%] sm:mx-auto  mx-4 rounded-[30px] shadow-xl   ">
         <div className="flex items-center">
           <div className="w-10 h-10 " >
             <img src={image} alt="" className="rounded-full w-full h-full" />
@@ -32,9 +32,9 @@ const NavBar = () => {
           {!isClicked && (
             <ul className=" text-white font-bold  absolute  top-20  bg-gray-900 rounded-sm p-2">
               <Link to="/"><li className="hover:text-[#ff3f34]">Home</li></Link>
-              <Link to=""><li className="hover:text-[#ff3f34]">About Me</li></Link>
-              <Link to=""><li className="hover:text-[#ff3f34]">Skills</li></Link>
-              <Link to="/contact"><li className="hover:text-[#ff3f34]">Contact Me</li></Link>
+              <Link to="/"><li className="hover:text-[#ff3f34]">About Me</li></Link>
+              <Link to="/"><li className="hover:text-[#ff3f34]">Skills</li></Link>
+              <Link to="/contact" target="_blank"><li className="hover:text-[#ff3f34]">Contact Me</li></Link>
             </ul>
           )
           }

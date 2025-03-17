@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className=" bg-gray-900  rounded-xl font-[sofia] py-10 text-xl ">
 
-      <div className="sm:w-[70%] sm:mx-auto   border-b-1  pb-10 ">
+      <div className="sm:w-[70%] sm:mx-auto  border-white border-b-1  pb-10 ">
         <div className="flex justify-center">
           <div >
             <div className="flex items-center" >
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="sm:w-[70%] sm:mx-auto text-center text-sm pt-4 ">
+      <div className="sm:w-[70%] sm:mx-auto text-white text-center text-sm pt-4 ">
 
         <p>All right Reserved&copy; {new Date().getFullYear()}. freddy-b_porfolio </p>
       </div>
