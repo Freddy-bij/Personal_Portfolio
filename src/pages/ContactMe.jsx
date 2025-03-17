@@ -6,13 +6,14 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaLocationDot, FaPhone } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 const ContactMe = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm("service_4bsv52r", "template_s01cp66", form.current, {
         publicKey: "utz4OsEk8a0S0BuJS",
@@ -32,7 +33,7 @@ const ContactMe = () => {
           form.current.reset();
         },
         (error) => {
-          toast.error("❌ Failed to send message. Try again!", {
+          toast.error(" Failed to send message. Try again!", {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
@@ -46,7 +47,6 @@ const ContactMe = () => {
         }
       );
   };
-
   return (
     <div className="max-w-4xl mx-auto font-[sofia] p-6">
 
@@ -55,9 +55,11 @@ const ContactMe = () => {
       <div className="grid md:grid-cols-2 gap-8 p-6 bg-gray-900 text-white rounded-xl shadow-lg">
         <div className="flex flex-col items-center text-center md:text-left">
           <img src={chat} alt="Chat Icon" className="h-64 w-64 mb-4 " />
-          <p className="text-lg font-semibold">Kigali, Kimisagara</p>
-          <p className="text-lg font-semibold">+250792404909</p>
-          <p className="text-lg font-semibold">freddybijanja31@gmail.com</p>
+          <div>
+            <p className="text-lg font-semibold flex items-center gap-1"><FaLocationDot />Kigali, Kimisagara</p>
+            <p className="text-lg font-semibold flex items-center gap-1"><FaPhone />+250792404909</p>
+            <p className="text-lg font-semibold flex items-center gap-1"><MdEmail />freddybijanja31@gmail.com</p>
+          </div>
         </div>
 
         <form

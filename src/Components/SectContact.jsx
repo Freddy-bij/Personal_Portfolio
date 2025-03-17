@@ -4,6 +4,8 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaLocationDot, FaPhone, FaVoicemail } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 const SectContact = () => {
   const form = useRef();
 
@@ -16,7 +18,7 @@ const SectContact = () => {
       })
       .then(
         () => {
-          toast.success("✅ Message successfully sent!", {
+          toast.success(" Message successfully sent!", {
             position: "top-center",
             autoClose: 3000,
             hideProgressBar: false,
@@ -29,7 +31,7 @@ const SectContact = () => {
           form.current.reset();
         },
         (error) => {
-          toast.error("❌ Failed to send message. Try again!", {
+          toast.error(" Failed to send message. Try again!", {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
@@ -46,21 +48,24 @@ const SectContact = () => {
 
   return (
 
-    <div className="sm:w-[70%] sm:mx-auto px-6">
+    <div className="sm:w-[70%] sm:mx-auto px-3">
       <h1 className="text-[#ff3f34] text-2xl font-[sofia] font-bold uppercase">
         Contact Me
       </h1>
-      <div className="max-w-4xl mx-auto font-[sofia] p-6">
+      <div className="max-w-4xl mx-auto font-[sofia] py-6 px-3">
 
         <ToastContainer />
 
-        <div className="grid md:grid-cols-2 gap-8 p-6 bg-gray-900 text-white rounded-xl shadow-lg">
+        <div className="grid md:grid-cols-2 gap-8 p-6 bg-gray-900 text-white rounded-xl ">
 
           <div className="flex flex-col items-center text-center md:text-left">
             <img src={chat} alt="Chat Icon" className="h-64 w-64 mb-4" />
-            <p className="text-lg font-semibold">Kigali, Kimisagara</p>
-            <p className="text-lg font-semibold">+250792404909</p>
-            <p className="text-lg font-semibold">freddybijanja31@gmail.com</p>
+           <div>
+            <p className="text-lg font-semibold flex items-center gap-1"><FaLocationDot/>Kigali, Kimisagara</p>
+            <p className="text-lg font-semibold flex items-center gap-1"><FaPhone/>+250792404909</p>
+            <p className="text-lg font-semibold flex items-center gap-1"><MdEmail/>freddybijanja31@gmail.com</p>
+           </div>
+            
           </div>
 
           <form

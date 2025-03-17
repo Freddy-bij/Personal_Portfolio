@@ -27,7 +27,7 @@ const SectAbout = () => {
         </div>
       </div>
       <div className="flex gap-4 mt-3">
-        <button className="border px-3 py-1 rounded-sm font-bold hover:bg-[#ff3f34] hover-border-none">Hire me</button>
+        <Link to="/contact" target="_blank"><button className="border px-3 py-1 rounded-sm font-bold hover:bg-[#ff3f34] hover-border-none">Hire me</button></Link>
         <Link to="https://github.com/Freddy-bij" target="_blank"> <button className="bg-[#ff3f34] px-3 py-1 rounded-sm font-bold text-black  hover:border hover:bg-black flex items-center gap-1 hover:text-white  "> <FaGithub /> Find me</button></Link>
       </div>
     </div>
