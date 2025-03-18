@@ -52,7 +52,7 @@ const SectContact = () => {
       <h1 className="text-[#ff3f34] text-2xl font-[sofia] font-bold uppercase">
         Contact Me
       </h1>
-      <div className="max-w-4xl mx-auto font-[sofia] py-6 px-3">
+      <div className="sm:max-w-4xl mx-auto font-[sofia] p-6">
 
         <ToastContainer />
 
