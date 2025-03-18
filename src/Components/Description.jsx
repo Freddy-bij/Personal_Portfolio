@@ -14,10 +14,7 @@ const Description = () => {
         Welcome to my portfolio
       </motion.h1>
 
-
       <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-
-
         <motion.div
           className="flex justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -30,7 +27,6 @@ const Description = () => {
             className="w-[300px] sm:w-[400px] rounded-lg "
           />
         </motion.div>
-
 
         <motion.div
           initial={{ opacity: 0, x: 50 }}
