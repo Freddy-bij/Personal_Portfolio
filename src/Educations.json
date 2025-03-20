@@ -1,0 +1,22 @@
+[
+    {
+        "id":"1",
+        "date":"2014-2020",
+        "title":"graduate",
+        "name":"acount management and computer science",
+        "degree":"bachelor degree",
+        "institution":"saint joseph institute",
+        "location":"goma"
+    },
+
+    {
+        "id":"2",
+        "date":"2024-2025",
+        "title":"graduate",
+        "name":"software developer",
+        "degree":"junior entry",
+        "institution":"alight rwanda",
+        "location":"gatsibo"
+
+    }
+]

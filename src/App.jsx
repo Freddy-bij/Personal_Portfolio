@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import { filsContent } from './contents/apiContent'
 import Layout from './Components/Layout'
 import ContactMe from './pages/ContactMe'
+import AboutMe from './pages/AboutMe'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
               <Route element={<Layout />}>
                 <Route path='/' element={<Home />} />
                 <Route path='/contact' element={<ContactMe/>}/>
+                <Route path='/about' element={<AboutMe/>}/>
               </Route>
             </Routes>
 
