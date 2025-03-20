@@ -32,7 +32,7 @@ const NavBar = () => {
           {!isClicked && (
             <ul className=" text-white font-bold  absolute  top-20  bg-gray-900 rounded-sm p-2">
               <Link to="/"><li className="hover:text-[#ff3f34]">Home</li></Link>
-              <Link to="/"><li className="hover:text-[#ff3f34]">About Me</li></Link>
+              <Link to="/about"><li className="hover:text-[#ff3f34]">About Me</li></Link>
               <Link to="/"><li className="hover:text-[#ff3f34]">Skills</li></Link>
               <Link to="/contact" target="_blank"><li className="hover:text-[#ff3f34]">Contact Me</li></Link>
             </ul>
