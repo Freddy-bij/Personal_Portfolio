@@ -5,6 +5,7 @@
         "title":"graduate",
         "name":"acount management and computer science",
         "degree":"bachelor degree",
+        "grade":"A2",
         "institution":"saint joseph institute",
         "location":"goma"
     },
@@ -14,7 +15,8 @@
         "date":"2024-2025",
         "title":"graduate",
         "name":"software developer",
-        "degree":"junior entry",
+        "degree":"junior web developer",
+        "grade":"entry",
         "institution":"alight rwanda",
         "location":"gatsibo"
 
