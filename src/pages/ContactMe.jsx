@@ -52,7 +52,7 @@ const ContactMe = () => {
 
       <ToastContainer />
 
-      <div className="grid md:grid-cols-2 gap-8 p-6 bg-gray-900 text-white rounded-xl shadow-lg">
+      <div className="grid md:grid-cols-2 gap-8 p-6 bg-gray-400 text-black rounded-xl shadow-lg">
         <div className="flex flex-col items-center text-center md:text-left">
           <img src={chat} alt="Chat Icon" className="h-64 w-64 mb-4 " />
           <div>
@@ -65,7 +65,7 @@ const ContactMe = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="flex flex-col space-y-4 bg-gray-800 p-6 rounded-lg shadow-md"
+          className="flex flex-col space-y-4 bg-gray-300 p-6 rounded-lg shadow-md"
         >
           <h1 className="text-[#ff3f34] text-2xl font-bold uppercase text-center">
             Contact Me
