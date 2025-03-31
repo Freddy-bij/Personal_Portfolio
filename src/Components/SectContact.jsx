@@ -79,6 +79,7 @@ const SectContact = () => {
               <input
                 type="text"
                 name="from_name"
+                required
                 placeholder="Enter your name"
                 className="w-full p-2 mt-1 border-b-2 border-[#ff3f34] outline-none"
               />
@@ -88,6 +89,7 @@ const SectContact = () => {
               <input
                 type="email"
                 name="from_email"
+                required
                 placeholder="Enter your email"
                 className="w-full p-2 mt-1 border-b-2 border-[#ff3f34] outline-none"
               />
@@ -96,6 +98,7 @@ const SectContact = () => {
               <label className="block text-sm font-medium">Message</label>
               <textarea
                 name="message"
+                required
                 placeholder="Enter your message here"
                 className="w-full p-2 mt-1 border-2 border-[#ff3f34] rounded-lg outline-none h-28"
               ></textarea>
