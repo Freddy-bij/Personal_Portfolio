@@ -5,7 +5,7 @@ import { IoLocationSharp } from "react-icons/io5";
 
 const Card = ({ education }) => {
   return (
-    <div className='bg-gray-400 p-2 rounded-xl '>
+    <div className='bg-gray-400 p-2 rounded-xl  '>
       <div className='flex justify-between'>
         <div className="flex items-center gap-1 bg-black px-2 py-0.5 rounded-2xl text-[#ff3f34] text-sm font-medium ">
           <IoCalendarNumberSharp />
