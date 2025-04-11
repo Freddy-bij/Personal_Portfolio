@@ -4,7 +4,7 @@ import Image from "../images/freddy prof.png";
 
 const Description = () => {
   return (
-    <div className="max-w-5xl- sm:w-[70%] sm:mx-auto px-6 py-12 font-[sofia]">
+    <div className="max-w-5xl- sm:w-[70%] sm:mx-auto sm:px-0 px-6 py-12 font-[sofia]">
       <motion.h1
         className="text-xl sm:text-3xl font-bold uppercase  text-[#ff3f34] text-center sm:text-left"
         initial={{ opacity: 0, y: 50 }}

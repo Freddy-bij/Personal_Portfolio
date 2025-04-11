@@ -8,7 +8,7 @@ const SectAbout = () => {
   return (
     <div className=" sm:w-[70%]  font-[sofia] sm:mx-auto mx-4  ">
 
-      <div className="grid xl:grid-cols-2 mt-20   p-2 rounded-sm sm:bg-none ">
+      <div className="grid xl:grid-cols-2    p-2 rounded-sm sm:bg-none ">
         <div >
           <div >
             <h1 className="text-[#ff3f34] text-2xl uppercase font-bold  pb-3 md:text-start text-center " >About Me</h1>

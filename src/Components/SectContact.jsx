@@ -79,11 +79,11 @@ const SectContact = () => {
 
   return (
 
-    <div className="sm:w-[70%] sm:mx-auto px-3">
+    <div className="sm:w-[70%] sm:mx-auto px-3 my-12">
       <h1 className="text-[#ff3f34] text-2xl font-[sofia] font-bold uppercase md:text-start text-center">
         Contact Me
       </h1>
-      <div className="sm:max-w-4xl mx-auto font-[sofia] p-6">
+      <div className="sm:max-w-4xl mx-auto font-[sofia] ">
 
         <ToastContainer />
 
