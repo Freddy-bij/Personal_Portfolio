@@ -30,9 +30,10 @@ const Footer = () => {
             <div>
               <h1 className="text-[#ff3f34] capitalize font-bold text-2xl">custom menu</h1>
               <ul className=" pl-6 text-white font-semibold  pt-2">
-                <li className=" hover:underline hover:underline-offset-6 hover:text-[#ff3f34]">about</li>
-                <li className=" hover:underline hover:underline-offset-6 hover:text-[#ff3f34]">Skills</li>
-                <li className=" hover:underline hover:underline-offset-6 hover:text-[#ff3f34]">contact me</li>
+              <Link to="/"><li className=" hover:underline hover:underline-offset-6 hover:text-[#ff3f34]">Home</li></Link>
+               <Link to="/about"><li className=" hover:underline hover:underline-offset-6 hover:text-[#ff3f34]">About</li></Link> 
+               <Link to="/"> <li className=" hover:underline hover:underline-offset-6 hover:text-[#ff3f34]">Skills</li></Link> 
+               <Link to="/contact"><li className=" hover:underline hover:underline-offset-6 hover:text-[#ff3f34]">Contact me</li></Link> 
               </ul>
             </div>
           </div>
