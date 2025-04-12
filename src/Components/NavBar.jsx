@@ -7,6 +7,7 @@ import { FaMoon } from "react-icons/fa6"
 import { RxCross2 } from "react-icons/rx"
 import { Link } from "react-router"
 
+
 const NavBar = () => {
   const { isChange, setIsChange, isClicked, setIsClicked } = useContext(filsContent)
   return (
@@ -28,23 +29,23 @@ const NavBar = () => {
               <div className=" text-white font-bold hidden md:flex md:items-center md:gap-3">
 
                 <Link to="/">
-                <button className=" hover:text-[#ff3f34] px-2 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-[#ff3f34] active:text-[#ff3f34] ... ">
+                <button className=" hover:text-[#ff3f34] px-2 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-[#ff3f34] active:text-[#ff3f34] ">
                   Home
                 </button>
                 </Link>
 
                 <Link to="about">
-                <button className=" hover:text-[#ff3f34] px-2 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-[#ff3f34] active:text-[#ff3f34] ...">
+                <button className=" hover:text-[#ff3f34] px-2 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-[#ff3f34] active:text-[#ff3f34] ">
                   About Me
                 </button>
                 </Link>
                 <Link to="/">
-                <button className=" hover:text-[#ff3f34] px-2 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-[#ff3f34] active:text-[#ff3f34] ...">
+                <button className=" hover:text-[#ff3f34] px-2 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-[#ff3f34] active:text-[#ff3f34] ">
                   Skills
                 </button></Link>
 
                 <Link to="contact">
-                <button className=" hover:text-[#ff3f34] px-2 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-[#ff3f34] active:text-[#ff3f34] ...">
+                <button className=" hover:text-[#ff3f34] px-2 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-[#ff3f34] active:text-[#ff3f34] ">
                   Contact Me
                 </button></Link>
 
@@ -61,16 +62,14 @@ const NavBar = () => {
             </div>
           </div>
           {!isClicked && (
-            <ul className=" text-white font-bold  absolute  top-20  bg-gray-900 rounded-sm p-2">
+            <div className="md:hidden flex">
+            <ul className=" text-white font-bold  absolute  top-20 right-4 sm:right-26  bg-gray-900 rounded-sm p-2">
               <Link to="/"><li className="hover:text-[#ff3f34]">Home</li></Link>
               <Link to="/about"><li className="hover:text-[#ff3f34]">About Me</li></Link>
               <Link to="/"><li className="hover:text-[#ff3f34]">Skills</li></Link>
               <Link to="/contact" target="_blank"><li className="hover:text-[#ff3f34]">Contact Me</li></Link>
-              
-              
-
-              
             </ul>
+            </div>
           )
           }
         </div>
