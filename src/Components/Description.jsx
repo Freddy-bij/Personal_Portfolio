@@ -38,7 +38,7 @@ const Description = () => {
             Full Stack Web Developer
           </h2>
           <p className="mt-6 text-lg">
-            Hello!👋 I am a junior web developer passionate about creating
+            Hello!👋 my name is <i className="font-semibold text-[#ff34f3]">Freddy BIJANJA</i>  I am a junior web developer passionate about creating
             modern and efficient sites. Curious and motivated, I learn every day
             to master the best web technologies to design interactive and fluid
             experiences.

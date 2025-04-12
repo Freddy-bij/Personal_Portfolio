@@ -8,7 +8,6 @@ import git from "../images/git.svg";
 import tailwind from "../images/tailwind.svg";
 import figma from "../images/figma.svg";
 import nodejs from "../images/nodejs.svg";
-
 const skills = [
   { src: htlm, title: "HTML" },
   { src: css, title: "CSS" },
@@ -43,7 +42,7 @@ const SectSkills = () => {
       <div className="max-w-4xl mx-auto ">
        
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center ">
           {skills.map((skill, i) => (
             <motion.div
               key={i}
@@ -55,7 +54,7 @@ const SectSkills = () => {
               className="w-28 h-28 bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl flex flex-col items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300"
             >
               <img src={skill.src} alt={skill.title} className="w-12 h-12 mb-2" />
-              <p className="text-white text-sm font-medium">{skill.title}</p>
+              <p className=" text-sm font-medium uppercase">{skill.title}</p>
             </motion.div>
           ))}
         </div>

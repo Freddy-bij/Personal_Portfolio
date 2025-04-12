@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="grid md:grid-cols-2  justify-center">
+        <div className="grid md:grid-cols-2  justify-center mt-4">
           <div className=" md:flex justify-center">
             <div>
               <h1 className="text-[#ff3f34] capitalize font-bold text-2xl">custom menu</h1>
