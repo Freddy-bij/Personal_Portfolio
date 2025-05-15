@@ -109,6 +109,7 @@ const ContactMe = () => {
             <input
               type="text"
               name="from_name"
+              required
               placeholder="Enter your name"
               className={`w-full p-2 mt-1 border-b-2 outline-none ${
                 errors.from_name ? "border-red-500" : "border-[#ff3f34]"
@@ -124,6 +125,7 @@ const ContactMe = () => {
             <input
               type="email"
               name="from_email"
+              required
               placeholder="Enter your email"
               className={`w-full p-2 mt-1 border-b-2 outline-none ${
                 errors.from_email ? "border-red-500" : "border-[#ff3f34]"
@@ -138,6 +140,7 @@ const ContactMe = () => {
             <label className="block text-sm font-medium">Message</label>
             <textarea
               name="message"
+              required
               placeholder="Enter your message here"
               className={`w-full p-2 mt-1 border-2 rounded-lg outline-none h-28 ${
                 errors.message ? "border-red-500" : "border-[#ff3f34]"
