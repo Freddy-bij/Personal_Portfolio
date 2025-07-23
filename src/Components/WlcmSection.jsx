@@ -3,7 +3,7 @@ import Description from './Description'
 
 const WlcmSection = () => {
   return (
-    <div className=' py-6-  '> 
+    <div > 
       <Description />  
     </div>
   )

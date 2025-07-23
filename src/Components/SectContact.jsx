@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaLocationDot, FaPhone, FaVoicemail } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { p } from "framer-motion/client";
+
 const SectContact = () => {
   const form = useRef();
   const [errors, setErrors] = useState({});
@@ -79,7 +79,7 @@ const SectContact = () => {
 
   return (
 
-    <div className="sm:w-[70%] sm:mx-auto px-3 my-12">
+    <div id="contact" className="sm:w-[70%] sm:mx-auto px-3 my-12">
       <h1 className="text-[#ff3f34] text-2xl font-[sofia] font-bold uppercase md:text-start text-center">
         Contact Me
       </h1>

@@ -1,5 +1,5 @@
 import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6"
-import freddy from "../images/im1.jpg"
+import freddy from "../images/freddy prof.png"
 import { Link } from "react-router"
 
 
@@ -24,10 +24,11 @@ const SectAbout = () => {
               </p>
 
               <div className="flex gap-4 mt-3">
-                <Link to="/contact" target="_blank">
+                <Link to="about" target="_blank">
                   <button className="border px-3 py-1 rounded-sm font-bold text-black shadow-sm bg-white hover:text-white hover:border  hover:border-gray-900 hover:bg-black">
                     Hire me
-                  </button></Link>
+                  </button>
+                </Link>
                 <Link to="https://github.com/Freddy-bij" target="_blank">
                   <button className="bg-[#ff3f34] px-3 py-1 rounded-sm font-bold text-black  hover:border  hover:border-gray-900 hover:bg-black flex items-center gap-1 hover:text-white  ">
                     <FaGithub />

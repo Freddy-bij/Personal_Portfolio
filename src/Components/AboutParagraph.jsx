@@ -1,5 +1,5 @@
 import { useState } from "react"
-import freddy from "../images/im1.jpg"
+import freddy from "../images/freddy prof.png"
 
 const AboutParagraph = () => {
     const [chowAllParagraph, setChowAllParagraph] = useState(false)

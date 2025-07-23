@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import Home from './pages/Home'
 import { filsContent } from './contents/apiContent'
 import Layout from './Components/Layout'
-import ContactMe from './pages/ContactMe'
+
 import AboutMe from './pages/AboutMe'
 
 
@@ -20,7 +20,7 @@ const App = () => {
 
               <Route element={<Layout />}>
                 <Route path='/' element={<Home />} />
-                <Route path='/contact' element={<ContactMe/>}/>
+              
                 <Route path='/about' element={<AboutMe/>}/>
               </Route>
             </Routes>

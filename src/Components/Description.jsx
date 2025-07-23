@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import Image from "../images/freddy prof.png";
+import Image from "../images/freddy.jpeg";
 
 const Description = () => {
   return (

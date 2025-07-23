@@ -34,7 +34,7 @@ const animationVariants = {
 
 const SectSkills = () => {
   return (
-    <div className="sm:w-[70%] mx-auto  py-16  font-[sofia]">
+    <div id="skills" className="sm:w-[70%] mx-auto  py-16  font-[sofia]">
       
        <h1 className="text-[#ff3f34] text-2xl uppercase font-bold  pb-3 md:text-start text-center ">
           My Skills
