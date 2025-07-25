@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <filsContent.Provider value={{ isChange, setIsChange, isClicked, setIsClicked }}>
-        <div className={isChange ? "bg-black text-white" : "bg-white text-black"}>
+        <div className={isChange ? "bg-gray-800 text-white" : "bg-white text-black"}>
 
           <BrowserRouter>
             <Routes>
