@@ -1,14 +1,14 @@
-// import Footer from "../Components/Footer"
+
 import PrensentationSec from "../Components/PrensentationSec"
 import WlcmSection from "../Components/WlcmSection"
 
 
 const Home = () => {
   return (
-    <div >
+    <div id="/" >
         <WlcmSection/>
         <PrensentationSec/>
-        {/* <Footer/> */}
+        
         
     </div>
   )

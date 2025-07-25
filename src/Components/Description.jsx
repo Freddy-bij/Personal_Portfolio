@@ -1,4 +1,5 @@
 
+import { Link } from "react-router";
 import Image from "../images/freddy.jpeg";
 
 import { motion } from "framer-motion"
@@ -25,7 +26,7 @@ const Description = () => {
           </div>
         </motion.div>
 
-        
+
         <motion.div
           className="order-1 lg:order-2 space-y-6"
           initial={{ opacity: 0, x: 50 }}
@@ -40,9 +41,9 @@ const Description = () => {
             <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full mb-4">
               Welcome to my portfolio
             </span>
-            <h1 className="text-4xl lg:text-5xl font-bold text-[#ff3f34] leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold text-purple-600 leading-tight">
               Full Stack
-              <span className="blocktext-[#ff3f34">
+              <span className="blocktext-purple-600">
                 Web Developer
               </span>
             </h1>
@@ -84,9 +85,13 @@ const Description = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
           >
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600  font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-              View My Work
-            </button>
+
+            <Link to="https://github.com/Freddy-bij" target="_blank">
+              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600  font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                View My Work
+              </button>
+            </Link>
+
             <button className="px-8 py-3 border-2 border-gray-300  font-semibold rounded-lg hover:border-gray-400 hover:bg-gray-900/20 transition-all duration-200">
               Download CV
             </button>

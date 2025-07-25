@@ -79,7 +79,7 @@ const SectContact = () => {
   }
 
   return (
-    <div className="min-h-screen  py-12 sm:py-16 lg:py-24">
+    <div id="contact" className="min-h-screen  py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ToastContainer />
 
@@ -96,15 +96,15 @@ const SectContact = () => {
             <span className="text-sm sm:text-base text-gray-700 font-semibold">Get In Touch</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-purple-600 mb-4 sm:mb-6">
             Contact
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800">
+            <span >
               {" "}
               Me
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg  max-w-2xl mx-auto leading-relaxed">
             Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.
           </p>
         </motion.div>
