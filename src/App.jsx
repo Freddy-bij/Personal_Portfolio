@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import { filsContent } from './contents/apiContent'
 import Layout from './Components/Layout'
 
-import AboutMe from './pages/AboutMe'
+
 
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
               <Route element={<Layout />}>
                 <Route path='/' element={<Home />} />
               
-                <Route path='/about' element={<AboutMe/>}/>
+            
               </Route>
             </Routes>
 

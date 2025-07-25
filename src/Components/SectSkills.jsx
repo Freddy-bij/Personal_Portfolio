@@ -44,7 +44,7 @@ const animationVariants = {
 
 const SectSkills = () => {
   return (
-    <div className="min-h-screen  py-12 sm:py-16 lg:py-24">
+    <div id="skills" className="min-h-screen  py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12 sm:mb-16 lg:mb-20"
@@ -58,33 +58,23 @@ const SectSkills = () => {
             <span className="text-sm sm:text-base text-gray-700 font-semibold">Technical Expertise</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold  mb-4 sm:mb-6 ">
+          <h2 className="text-3xl text-purple-600 sm:text-4xl lg:text-5xl font-bold  mb-4 sm:mb-6 ">
             My
-            <span className=" bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800">
+            <span className=" bg-clip-text ">
               {" "}
               Skills
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg  max-w-2xl mx-auto leading-relaxed">
             A comprehensive toolkit of modern technologies and frameworks that I use to build exceptional digital
             experiences
           </p>
         </motion.div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           {skills.map((skill, i) => (
-            <motion.div
-              key={`${skill.title}-${i}`}
-              variants={animationVariants}
-              initial="hidden"
-              whileInView="visible"
-              custom={i}
-              viewport={{ once: true }}
-              whileHover={{
-                scale: 1.05,
-                rotateY: 5,
-                transition: { duration: 0.3 },
-              }}
+            <div
+
               className="group relative"
             >
               <div className="relative bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
@@ -129,7 +119,7 @@ const SectSkills = () => {
 
                 <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-blue-400/0 via-purple-400/0 to-blue-400/0 group-hover:from-blue-400/10 group-hover:via-purple-400/10 group-hover:to-blue-400/10 transition-all duration-300"></div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
         <motion.div
@@ -149,7 +139,7 @@ const SectSkills = () => {
             return (
               <motion.div
                 key={category}
-                className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-white/20"
+                className="bg-white/70  Let's Work Togetherbackdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-white/20"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -179,9 +169,9 @@ const SectSkills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-base sm:text-lg text-gray-600 mb-6">Ready to bring these skills to your next project?</p>
+          <p className="text-base sm:text-lg mb-6">Ready to bring these skills to your next project?</p>
           <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-            Let's Work Together
+            <a href="#contact"> Let's Work Together</a>
           </button>
         </motion.div>
       </div>

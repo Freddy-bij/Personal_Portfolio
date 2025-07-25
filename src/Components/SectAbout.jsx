@@ -9,10 +9,12 @@ import {
   FaRocket,
 } from "react-icons/fa6"
 import { motion } from "framer-motion"
+import Education from "./Education"
+import { Link } from "react-router"
 
 const SectAbout = () => {
   return (
-    <div className="min-h-screen py-16 lg:py-24">
+    <div id="about" className="min-h-screen py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6">
       
         <motion.div
@@ -85,7 +87,7 @@ const SectAbout = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
-                <span>Let's Work Together</span>
+                <span><a href="#contact">Let's Work Together</a></span>
                 <FaArrowUpRightFromSquare className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
 
@@ -100,23 +102,25 @@ const SectAbout = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
             >
-              <a
-                href="https://github.com/Freddy-bij"
+              <Link
+                to="https://github.com/Freddy-bij"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-white/70 backdrop-blur-sm text-gray-700 rounded-2xl hover:bg-gray-900 hover:text-white transition-all duration-300 group border border-gray-200"
               >
-                <FaGithub className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
-              <a
-                href="#"
+                <FaGithub className="whreh-5 group-hover:scale-110 transition-transform" />
+              </Link>
+              <Link
+                to="https://www.linkedin.com/in/freddy-bijanja-054b3031a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-white/70 backdrop-blur-sm text-gray-700 rounded-2xl hover:bg-blue-600 hover:text-white transition-all duration-300 group border border-gray-200"
               >
                 <FaLinkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
+              </Link>
+             
             </motion.div>
+             <Education/>
           </motion.div>
           <motion.div
             className="lg:col-span-5 space-y-6"
