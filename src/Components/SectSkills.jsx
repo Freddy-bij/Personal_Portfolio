@@ -9,6 +9,9 @@ import git from "../images/git.svg"
 import tailwind from "../images/tailwind.svg"
 import figma from "../images/figma.svg"
 import nodejs from "../images/nodejs.svg"
+import { useContext } from "react"
+import { filsContent } from "../contents/apiContent"
+
 
 const skills = [
   { src: htlm, title: "HTML", category: "Frontend", level: 95 },
@@ -43,6 +46,7 @@ const animationVariants = {
 }
 
 const SectSkills = () => {
+   const { isChange, setIsChange } = useContext(filsContent)
   return (
     <div id="skills" className="min-h-screen  py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,9 +57,9 @@ const SectSkills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-4 sm:mb-6">
+          <div className="inline-flex items-center text-gray-900 gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-4 sm:mb-6">
             <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse"></div>
-            <span className="text-sm sm:text-base text-gray-700 font-semibold">Technical Expertise</span>
+            <span className="text-sm sm:text-base  font-semibold">Technical Expertise</span>
           </div>
 
           <h2 className="text-3xl text-purple-600 sm:text-4xl lg:text-5xl font-bold  mb-4 sm:mb-6 ">
@@ -64,6 +68,7 @@ const SectSkills = () => {
               {" "}
               Skills
             </span>
+            
           </h2>
 
           <p className="text-base sm:text-lg  max-w-2xl mx-auto leading-relaxed">
@@ -77,10 +82,11 @@ const SectSkills = () => {
 
               className="group relative"
             >
-              <div className="relative bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+           
+              <div className="relative bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-blue-400/10 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
 
                 <div
-                  className={`absolute -top-2 -right-2 px-2 py-1 bg-gradient-to-r ${categoryColors[skill.category]} text-white text-xs font-semibold rounded-full shadow-lg`}
+                  className={`absolute -top-2 -right-2 px-2 py-1 bg-gradient-to-r ${categoryColors[skill.category]}  text-xs font-semibold rounded-full shadow-lg`}
                 >
                   {skill.category}
                 </div>
@@ -97,13 +103,13 @@ const SectSkills = () => {
                   </div>
 
                 
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 text-center">{skill.title}</h3>
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold  text-center">{skill.title}</h3>
 
                
                   <div className="w-full">
                     <div className="flex justify-between items-center mb-1">
-                      <span className="text-xs text-gray-600">Proficiency</span>
-                      <span className="text-xs font-semibold text-gray-900">{skill.level}%</span>
+                      <span className="text-xs ">Proficiency</span>
+                      <span className="text-xs font-semibold ">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
                       <motion.div
@@ -117,13 +123,12 @@ const SectSkills = () => {
                   </div>
                 </div>
 
-                <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-blue-400/0 via-purple-400/0 to-blue-400/0 group-hover:from-blue-400/10 group-hover:via-purple-400/10 group-hover:to-blue-400/10 transition-all duration-300"></div>
               </div>
             </div>
           ))}
         </div>
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 "
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -139,7 +144,7 @@ const SectSkills = () => {
             return (
               <motion.div
                 key={category}
-                className="bg-white/70  Let's Work Togetherbackdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-white/20"
+                className={` ${isChange ? "bg-gray-900/80" : "bg-gray-200"}  Let's Work Togetherbackdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-white/20`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -149,13 +154,13 @@ const SectSkills = () => {
                   <div
                     className={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r ${gradient} rounded-xl mb-3`}
                   >
-                    <span className="text-white font-bold text-lg">{categorySkills.length}</span>
+                    <span className=" font-bold text-lg">{categorySkills.length}</span>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-1">{category}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{categorySkills.length} Skills</p>
+                  <h3 className="font-bold  mb-1">{category}</h3>
+                  <p className="text-sm  mb-2">{categorySkills.length} Skills</p>
                   <div className="flex items-center justify-center gap-1">
-                    <span className="text-xs text-gray-500">Avg:</span>
-                    <span className="text-sm font-semibold text-gray-900">{avgLevel}%</span>
+                    <span className="text-xs ">Avg:</span>
+                    <span className="text-sm font-semibold ">{avgLevel}%</span>
                   </div>
                 </div>
               </motion.div>
@@ -170,7 +175,7 @@ const SectSkills = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <p className="text-base sm:text-lg mb-6">Ready to bring these skills to your next project?</p>
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600  font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
             <a href="#contact"> Let's Work Together</a>
           </button>
         </motion.div>

@@ -87,7 +87,7 @@ const Description = () => {
           >
 
             <Link to="https://github.com/Freddy-bij" target="_blank">
-              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600  font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+              <button className="px-8 py-3 bg-gradient-to-r w-full  from-blue-600 to-purple-600  font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
                 View My Work
               </button>
             </Link>

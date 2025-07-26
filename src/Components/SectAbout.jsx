@@ -11,8 +11,11 @@ import {
 import { motion } from "framer-motion"
 import Education from "./Education"
 import { Link } from "react-router"
+import { useContext } from "react"
+import { filsContent } from "../contents/apiContent"
 
 const SectAbout = () => {
+  const { isChange, setIsChange } = useContext(filsContent)
   return (
     <div id="about" className="min-h-screen py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -43,7 +46,7 @@ const SectAbout = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20">
+            <div className={` ${isChange? "bg-white/70" :"bg-gray-200"} backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20`}>
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed">
                   I'm a passionate full-stack developer who bridges the gap between{" "}
@@ -91,7 +94,7 @@ const SectAbout = () => {
                 <FaArrowUpRightFromSquare className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
 
-              <button className="px-8 py-4 bg-white/70 backdrop-blur-sm text-gray-700 font-semibold rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-3 border border-gray-200">
+              <button className={`px-8 py-4  ${isChange? "bg-white/70" : "bg-gray-300"}  text-gray-700 font-semibold rounded-2xl flex items-center justify-center gap-3 border border-gray-200`}>
                 <FaDownload className="w-4 h-4" />
                 <span>Download Resume</span>
               </button>
@@ -106,7 +109,7 @@ const SectAbout = () => {
                 to="https://github.com/Freddy-bij"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-white/70 backdrop-blur-sm text-gray-700 rounded-2xl hover:bg-gray-900 hover:text-white transition-all duration-300 group border border-gray-200"
+                className={`p-4 ${isChange? "bg-white/70" : "bg-gray-200"} backdrop-blur-sm text-gray-700 rounded-2xl hover:bg-gray-900 hover:text-white transition-all duration-300 group border border-gray-200`}
               >
                 <FaGithub className="whreh-5 group-hover:scale-110 transition-transform" />
               </Link>
@@ -114,7 +117,7 @@ const SectAbout = () => {
                 to="https://www.linkedin.com/in/freddy-bijanja-054b3031a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-white/70 backdrop-blur-sm text-gray-700 rounded-2xl hover:bg-blue-600 hover:text-white transition-all duration-300 group border border-gray-200"
+                className={`p-4 ${isChange? "bg-white/70 " : "bg-gray-200"} backdrop-blur-sm text-gray-700 rounded-2xl hover:bg-blue-600 hover:text-white transition-all duration-300 group border border-gray-200`}
               >
                 <FaLinkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </Link>
@@ -174,17 +177,17 @@ const SectAbout = () => {
               ))}
             </div>
             <motion.div
-              className="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20"
+              className= {` ${isChange? "bg-white/70" : "bg-gray-300"} backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
             >
-              <h3 className="font-semibold text-gray-900 mb-4">Tech Stack</h3>
+              <h3 className="font-semibold text-blue-600 mb-4">Tech Stack</h3>
               <div className="flex flex-wrap gap-2">
                 {["React", "Node.js", "TypeScript", "Tailwind", "MongoDB", "Framer Motion"].map((tech, index) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 text-sm font-medium rounded-lg hover:from-blue-100 hover:to-purple-100 hover:text-blue-700 transition-all cursor-default"
+                    className={`px-3 py-1  ${isChange ? "bg-gray-900/80" : "bg-gradient-to-r from-gray-100 to-gray-200"} text-sm font-medium rounded-lg hover:from-blue-100 hover:to-purple-100 hover:text-blue-700 transition-all cursor-default`}
                   >
                     {tech}
                   </span>
