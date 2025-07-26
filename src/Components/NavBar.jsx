@@ -50,12 +50,12 @@ const NavBar = () => {
 
   return (
     <div
-      className={`font-[sofia] sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "pt-0 w-full  bg-gray-900/95 backdrop-blur-md shadow-2xl" : "pt-6 w-full"
-        }`}
+      className={`font-[sofia] sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "pt-0 w-full bg-gray-900/95  backdrop-blur-md shadow-2xl" : "  pt-6 w-full"
+        }  `}
     >
       <nav
-        className={`flex justify-between bg-gray-900/80 backdrop-blur-md text-white items-center py-2 px-1 rounded-[30px] shadow-lg transition-all duration-300 ${isScrolled ? "sm:w-[70%] sm:mx-auto mx-4 my-2 bg-gray-900/90" : "sm:w-[70%] sm:mx-auto mx-4"
-          }`}
+        className={`flex justify-between  backdrop-blur-md  items-center py-2 px-1 rounded-[30px]  transition-all duration-300 ${isScrolled ? "sm:w-[70%] sm:mx-auto mx-4 my-2  " : "sm:w-[70%] sm:mx-auto mx-4  bg-gray-900/95 shadow-2xl"
+          }}`}
       >
         <div className="flex items-center">
           <div className="w-10 h-10">
@@ -66,15 +66,15 @@ const NavBar = () => {
             />
           </div>
           <Link to="/">
-            <h1 className="text-xl font-semibold hover:text-purple-600 transition-colors duration-300">
+            <h1 className="text-xl font-semibold text-white">
               Freddy-<span className="text-2xl font-bold text-purple-600">B</span>
             </h1>
           </Link>
         </div>
 
         <div className="relative">
-          <div className="flex items-center gap-x-2">
-            <div className="text-white font-bold hidden md:flex md:items-center md:gap-3">
+          <div className="flex items-center gap-x-2 text-white">
+            <div className=" font-bold hidden md:flex md:items-center md:gap-3">
               
                 <button className="hover:text-purple-600 px-2 py-1 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-purple-600 active:text-purple-600 transition-all duration-300 hover:scale-105">
                  <a href="#/">Home</a>
@@ -101,7 +101,7 @@ const NavBar = () => {
             </div>
 
             <div
-              className={`${isChange ? "bg-black text-white" : "bg-white text-black"} w-8 h-8 flex items-center justify-center rounded-full text-2xl cursor-pointer transition-all duration-500 hover:scale-110 active:scale-95`}
+              className={`${isChange ? "bg-black " : "bg-white text-black"} w-8 h-8 flex items-center justify-center rounded-full text-2xl cursor-pointer transition-all duration-500 hover:scale-110 active:scale-95`}
               onClick={() => setIsChange((prevIsChange) => !prevIsChange)}
             >
               <div className="transition-transform duration-500 ease-in-out">
@@ -109,10 +109,10 @@ const NavBar = () => {
               </div>
             </div>
 
-            <div className="flex items-center bg-black text-white rounded-2xl gap-x-2 relative md:hidden overflow-hidden">
+            <div className={`flex items-center   rounded-2xl gap-x-2 relative md:hidden overflow-hidden ${isChange ? "bg-black" : "bg-gray-200"}`}>
               <h1 className="pl-2 font-semibold transition-all duration-300">Menu</h1>
               <div
-                className="w-8 h-8 bg-purple-600 flex justify-center items-center rounded-full font-semibold text-white text-2xl cursor-pointer transition-all duration-300 hover:bg-[#ff2f24] active:scale-95"
+                className="w-8 h-8 bg-purple-600 flex justify-center items-center rounded-full font-semibold  text-2xl cursor-pointer transition-all duration-300 hover:bg-[#ff2f24] active:scale-95"
                 onClick={() => setIsClicked((prevIsClicked) => !prevIsClicked)}
               >
                 <div className="transition-transform duration-300 ease-in-out">
@@ -134,8 +134,8 @@ const NavBar = () => {
               }
           `}
           >
-            <div className="bg-gray-900/95 backdrop-blur-md rounded-xl p-4 shadow-2xl border border-gray-700/50">
-              <ul className="text-white font-bold space-y-3">
+            <div className="bg-gray-900/95 text-white backdrop-blur-md rounded-xl p-4 shadow-2xl border border-gray-700/50" >
+              <ul className=" font-bold space-y-3">
                 <li className="transform transition-all duration-300 hover:translate-x-2">
                   <a
                     href="/"

@@ -1,13 +1,15 @@
 import chat from "../images/chat.svg"
-import { useRef, useState } from "react"
+import { useContext, useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { FaLocationDot, FaPhone, FaPaperPlane } from "react-icons/fa6"
 import { MdEmail } from "react-icons/md"
 import { motion } from "framer-motion"
+import { filsContent } from "../contents/apiContent"
 
 const SectContact = () => {
+  const { isChange, setIsChange } = useContext(filsContent)
   const form = useRef()
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -117,59 +119,59 @@ const SectContact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-white/20 h-full">
+            <div className={` ${isChange? "bg-gray-900/80 " : "bg-gray-300"} backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-white/20 h-full`}>
               <div className="text-center mb-8">
                 <div className="relative inline-block">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-2xl"></div>
-                  <div className="relative bg-white/90 p-6 rounded-3xl shadow-lg">
+                <div className={`relative  p-6 rounded-3xl shadow-lg`}>
                     <img
                       src={chat || "/placeholder.svg?height=200&width=200"}
                       alt="Chat Icon"
-                      className="h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 mx-auto object-contain"
+                      className="h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 mx-auto object-contain text-black"
                     />
                   </div>
                 </div>
               </div>
               <div className="space-y-6">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-8">Let's Connect</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900- text-center mb-8">Let's Connect</h3>
 
                 <div className="space-y-4">
                   <motion.div
-                    className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl hover:shadow-md transition-all duration-300"
+                    className="flex items-center gap-4 p-4 bg-blue-300 rounded-xl hover:shadow-md transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                      <FaLocationDot className="text-white text-lg" />
+                      <FaLocationDot className=" text-lg" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 font-medium">Location</p>
-                      <p className="text-gray-900 font-semibold">Kigali, Kimisagara</p>
+                      <p className={`text-sm  ${isChange? "text-gray-600" : "text-white"} font-medium`}>Location</p>
+                      <p className=" font-semibold">Kigali, Kimisagara</p>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    className="flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl hover:shadow-md transition-all duration-300"
+                    className="flex items-center gap-4 p-4 bg-blue-700/60 rounded-xl hover:shadow-md transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-600 to-blue-600 rounded-xl flex items-center justify-center">
-                      <FaPhone className="text-white text-lg" />
+                      <FaPhone className=" text-lg" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 font-medium">Phone</p>
-                      <p className="text-gray-900 font-semibold">+250792404909</p>
+                      <p className={`text-sm  ${isChange? "text-gray-600" : "text-white"} font-medium`}>Phone</p>
+                      <p className=" font-semibold">+250792404909</p>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    className="flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl hover:shadow-md transition-all duration-300"
+                    className="flex items-center gap-4 p-4 bg-gray-500 rounded-xl hover:shadow-md transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
-                      <MdEmail className="text-white text-lg" />
+                      <MdEmail className=" text-lg" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 font-medium">Email</p>
-                      <p className="text-gray-900 font-semibold">freddybijanja31@gmail.com</p>
+                      <p className={`text-sm  ${isChange? "text-gray-600" : "text-white"} font-medium`}>Email</p>
+                      <p className=" font-semibold">freddybijanja31@gmail.com</p>
                     </div>
                   </motion.div>
                 </div>
@@ -197,19 +199,19 @@ const SectContact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-white/20">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Send me a message</h3>
+            <div className= {`backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-white/20 ${isChange ? "bg-gray-900/80" :"bg-gray-300"}`}>
+              <h3 className="text-xl sm:text-2xl font-bold  mb-6">Send me a message</h3>
 
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                  <label className="block text-sm font-semibold  mb-2">Full Name</label>
                   <input
                     type="text"
                     name="from_name"
                     placeholder="Enter your full name"
-                    className={`w-full p-4 bg-white/50 text-black border-2 rounded-xl outline-none transition-all duration-300 focus:bg-white focus:shadow-lg ${
-                      errors.from_name ? "border-red-500 focus:border-red-500" : "border-gray-200 focus:border-blue-500"
-                    }`}
+                    className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none  focus:shadow-lg ${
+                      errors.from_name ? "border-red-500 focus:border-red-500" : " focus:border-blue-500"
+                    } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
                   />
                   {errors.from_name && <p className="text-red-600 text-sm mt-2">{errors.from_name}</p>}
                 </div>
@@ -220,24 +222,24 @@ const SectContact = () => {
                     type="email"
                     name="from_email"
                     placeholder="Enter your email address"
-                    className={`w-full p-4 bg-white/50 text-black  border-2 rounded-xl outline-none transition-all duration-300 focus:bg-white focus:shadow-lg ${
+                    className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none   focus:shadow-lg ${
                       errors.from_email
                         ? "border-red-500 focus:border-red-500"
-                        : "border-gray-200 focus:border-blue-500"
-                    }`}
+                        : " focus:border-blue-500"
+                    } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
                   />
                   {errors.from_email && <p className="text-red-600 text-sm mt-2">{errors.from_email}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                  <label className="block text-sm font-semibold  mb-2">Message</label>
                   <textarea
                     name="message"
                     placeholder="Tell me about your project..."
                     rows="6"
                     className={`w-full p-4 bg-white/50 text-black border-2 rounded-xl outline-none transition-all duration-300 focus:bg-white focus:shadow-lg resize-none ${
-                      errors.message ? "border-red-500 focus:border-red-500" : "border-gray-200 focus:border-blue-500"
-                    }`}
+                      errors.message ? "border-red-500 focus:border-red-500" : " focus:border-blue-500"
+                    } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
                   ></textarea>
                   {errors.message && <p className="text-red-600 text-sm mt-2">{errors.message}</p>}
                 </div>
@@ -245,7 +247,7 @@ const SectContact = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 ${
+                  className={`w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600  font-bold rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 ${
                     isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                   }`}
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}

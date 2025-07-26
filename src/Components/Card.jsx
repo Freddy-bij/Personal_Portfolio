@@ -3,11 +3,14 @@ import { FaUserGraduate } from "react-icons/fa6"
 import { LuSchool } from "react-icons/lu"
 import { IoLocationSharp } from "react-icons/io5"
 import { motion } from "framer-motion"
+import { useContext } from "react"
+import { filsContent } from "../contents/apiContent"
 
 const Card = ({ education }) => {
+  const {isChange , setIsChange}=useContext(filsContent)
   return (
     <div
-      className="group relative bg-white/80 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500"
+      className={`group relative ${isChange? "bg-white/80" : " bg-gradient-to-r from-blue-500/200 via-purple-500/20  to-blue-200" }  backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500`}
     >
      
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-blue-50/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -87,7 +90,7 @@ const Card = ({ education }) => {
         <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
       </div>
 
-      <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-blue-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-blue-500/20 group-hover:via-purple-500/20 group-hover:to-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+      
     </div>
   )
 }
