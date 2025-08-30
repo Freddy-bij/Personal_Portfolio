@@ -5,7 +5,7 @@ import Image from "../images/freddy.jpeg";
 import { motion } from "framer-motion"
 
 
-const Pdf_FILE = 'http://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
+const Pdf_FILE = 'https://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
 const Description = () => {
   
 const downloadFileAtURL = async (url) => {
