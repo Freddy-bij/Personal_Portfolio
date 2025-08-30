@@ -7,13 +7,9 @@ import { motion } from "framer-motion"
 
 const Pdf_FILE = 'https://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
 const Description = () => {
-  
-const downloadFileAtURL = async (url) => {
-  const response = await fetch(url);
-  const blob = await response.blob();
   const fileName = url.split('/').pop();
   const aTag = document.createElement('a');
-  aTag.href = URL.createObjectURL(blob);
+  aTag.href = url;
   aTag.setAttribute('download', fileName);
   document.body.appendChild(aTag);
   aTag.click();
