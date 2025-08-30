@@ -4,7 +4,19 @@ import Image from "../images/freddy.jpeg";
 
 import { motion } from "framer-motion"
 
+
+const Pdf_FILE = 'http://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
 const Description = () => {
+const downloadFileAtURL = (url) => {
+  const fileName = url.split('/').pop();
+  const aTag = document.createElement('a');
+  aTag.href = url;
+  aTag.setAttribute('download', fileName);
+  document.body.appendChild(aTag);
+  aTag.click();
+  aTag.remove();
+};
+
   return (
     <div className="max-w-6xl mx-auto px-6 py-16 lg:py-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -92,7 +104,9 @@ const Description = () => {
               </button>
             </Link>
 
-            <button className="px-8 py-3 border-2 border-gray-300  font-semibold rounded-lg hover:border-gray-400 hover:bg-gray-900/20 transition-all duration-200">
+            <button className="px-8 py-3 border-2 border-gray-300  font-semibold rounded-lg hover:bg-gray-900 transition-all duration-200"
+            onClick={() => {downloadFileAtURL(Pdf_FILE)}}
+            >
               Download CV
             </button>
           </motion.div>
