@@ -21,15 +21,19 @@ const Pdf_FILE = 'http://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
 const SectAbout = () => {
   const { isChange, setIsChange } = useContext(filsContent)
 
-const downloadFileAtURL = (url) => {
+
+const downloadFileAtURL = async (url) => {
+  const response = await fetch(url);
+  const blob = await response.blob();
   const fileName = url.split('/').pop();
   const aTag = document.createElement('a');
-  aTag.href = url;
+  aTag.href = URL.createObjectURL(blob);
   aTag.setAttribute('download', fileName);
   document.body.appendChild(aTag);
   aTag.click();
   aTag.remove();
 };
+
 
   return (
     <div id="about" className="min-h-screen py-16 lg:py-24">
