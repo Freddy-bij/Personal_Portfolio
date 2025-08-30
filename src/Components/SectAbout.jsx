@@ -22,17 +22,17 @@ const SectAbout = () => {
   const { isChange, setIsChange } = useContext(filsContent)
 
 
-const downloadFileAtURL = async (url) => {
-  const response = await fetch(url);
-  const blob = await response.blob();
-  const fileName = url.split('/').pop();
-  const aTag = document.createElement('a');
-  aTag.href = URL.createObjectURL(blob);
-  aTag.setAttribute('download', fileName);
-  document.body.appendChild(aTag);
-  aTag.click();
-  aTag.remove();
-};
+// const downloadFileAtURL = async (url) => {
+//   const response = await fetch(url);
+//   const blob = await response.blob();
+//   const fileName = url.split('/').pop();
+//   const aTag = document.createElement('a');
+//   aTag.href = URL.createObjectURL(blob);
+//   aTag.setAttribute('download', fileName);
+//   document.body.appendChild(aTag);
+//   aTag.click();
+//   aTag.remove();
+// };
 
 
   return (
@@ -113,12 +113,19 @@ const downloadFileAtURL = async (url) => {
                 <FaArrowUpRightFromSquare className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
 
-              <button className={`px-8 py-4  ${isChange? "bg-white/70" : "bg-gray-300"}  text-gray-700 font-semibold rounded-2xl flex items-center justify-center gap-3 border border-gray-200`}
-              onClick={() => downloadFileAtURL(Pdf_FILE)}
+
+           <a href="https://yourdomain.com/CV_Frederick_BIJANJA_2025.pdf" download="CV_Frederick_BIJANJA_2025.pdf">
+  
+   <button className={`px-8 py-4  ${isChange? "bg-white/70" : "bg-gray-300"}  text-gray-700 font-semibold rounded-2xl flex items-center justify-center gap-3 border border-gray-200`}
+              // onClick={() => downloadFileAtURL(Pdf_FILE)}
               >
                 <FaDownload className="w-4 h-4" />
                 <span>Download Resume</span>
               </button>
+
+</a>
+
+           
             </motion.div>
             <motion.div
               className="flex gap-4"
