@@ -14,8 +14,23 @@ import { Link } from "react-router"
 import { useContext } from "react"
 import { filsContent } from "../contents/apiContent"
 
+
+const Pdf_FILE = 'http://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
+
+
 const SectAbout = () => {
   const { isChange, setIsChange } = useContext(filsContent)
+
+const downloadFileAtURL = (url) => {
+  const fileName = url.split('/').pop();
+  const aTag = document.createElement('a');
+  aTag.href = url;
+  aTag.setAttribute('download', fileName);
+  document.body.appendChild(aTag);
+  aTag.click();
+  aTag.remove();
+};
+
   return (
     <div id="about" className="min-h-screen py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -94,7 +109,9 @@ const SectAbout = () => {
                 <FaArrowUpRightFromSquare className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
 
-              <button className={`px-8 py-4  ${isChange? "bg-white/70" : "bg-gray-300"}  text-gray-700 font-semibold rounded-2xl flex items-center justify-center gap-3 border border-gray-200`}>
+              <button className={`px-8 py-4  ${isChange? "bg-white/70" : "bg-gray-300"}  text-gray-700 font-semibold rounded-2xl flex items-center justify-center gap-3 border border-gray-200`}
+              onClick={() => downloadFileAtURL(Pdf_FILE)}
+              >
                 <FaDownload className="w-4 h-4" />
                 <span>Download Resume</span>
               </button>
