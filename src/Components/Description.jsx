@@ -5,23 +5,18 @@ import Image from "../images/freddy.jpeg";
 import { motion } from "framer-motion"
 
 
-// const Pdf_FILE = 'http://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
+const Pdf_FILE = 'http://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
 const Description = () => {
 
-
-
-// const downloadFileAtURL = async (url) => {
-//   const response = await fetch(url);
-//   const blob = await response.blob();
-//   const fileName = url.split('/').pop();
-//   const aTag = document.createElement('a');
-//   aTag.href = URL.createObjectURL(blob);
-//   aTag.setAttribute('download', fileName);
-//   document.body.appendChild(aTag);
-//   aTag.click();
-//   aTag.remove();
-// };
-
+const downloadFileAtURL = (url) => {
+  const fileName = url.split('/').pop();
+  const aTag = document.createElement('a');
+  aTag.href = url;
+  aTag.setAttribute('download', fileName);
+  document.body.appendChild(aTag);
+  aTag.click();
+  aTag.remove();
+};
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-16 lg:py-24">
@@ -110,16 +105,11 @@ const Description = () => {
               </button>
             </Link>
 
-     <a href="https://yourdomain.com/CV_Frederick_BIJANJA_2025.pdf" download="CV_Frederick_BIJANJA_2025.pdf">
-    <button className="px-8 py-3 border-2 border-gray-300  font-semibold rounded-lg hover:bg-gray-900 transition-all duration-200"
-            // onClick={() => {downloadFileAtURL(Pdf_FILE)}}
+            <button className="px-8 py-3 border-2 border-gray-300  font-semibold rounded-lg hover:bg-gray-900 transition-all duration-200"
+            onClick={() => {downloadFileAtURL(Pdf_FILE)}}
             >
               Download CV
             </button>
-</a>
-
-     
-    
           </motion.div>
         </motion.div>
       </div>
