@@ -219,4 +219,3 @@ const downloadFileAtURL = (url) => {
 }
 
 export default SectAbout
-
