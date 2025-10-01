@@ -1,20 +1,21 @@
 
+
 import { Link } from "react-router";
 import Image from "../images/freddy.jpeg";
+import { motion } from "framer-motion";
 
-import { motion } from "framer-motion"
+const Pdf_FILE = 'https://localhost:5173/CV_Frederick_BIJANJA_2025.pdf';
 
-
-const Pdf_FILE = 'https://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
 const Description = () => {
-  const fileName = url.split('/').pop();
-  const aTag = document.createElement('a');
-  aTag.href = url;
-  aTag.setAttribute('download', fileName);
-  document.body.appendChild(aTag);
-  aTag.click();
-  aTag.remove();
-};
+  const downloadFileAtURL = (url) => {
+    const fileName = url.split('/').pop();
+    const aTag = document.createElement('a');
+    aTag.href = url;
+    aTag.setAttribute('download', fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-16 lg:py-24">
@@ -37,7 +38,6 @@ const Description = () => {
           </div>
         </motion.div>
 
-
         <motion.div
           className="order-1 lg:order-2 space-y-6"
           initial={{ opacity: 0, x: 50 }}
@@ -54,7 +54,7 @@ const Description = () => {
             </span>
             <h1 className="text-4xl lg:text-5xl font-bold text-purple-600 leading-tight">
               Full Stack
-              <span className="blocktext-purple-600">
+              <span className="block text-purple-600">
                 Web Developer
               </span>
             </h1>
@@ -66,8 +66,8 @@ const Description = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <p className="text-lg  leading-relaxed">
-              Hello, I'm <span className="font-semibold text-purple-600 ">Freddy BIJANJA</span>, a passionate full-stack
+            <p className="text-lg leading-relaxed">
+              Hello, I'm <span className="font-semibold text-purple-600">Freddy BIJANJA</span>, a passionate full-stack
               developer dedicated to crafting exceptional digital experiences. I specialize in building modern, scalable
               web applications using cutting-edge technologies.
             </p>
@@ -96,15 +96,15 @@ const Description = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
           >
-
             <Link to="https://github.com/Freddy-bij" target="_blank">
-              <button className="px-8 py-3 bg-gradient-to-r w-full  from-blue-600 to-purple-600  font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+              <button className="px-8 py-3 bg-gradient-to-r w-full from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
                 View My Work
               </button>
             </Link>
 
-            <button className="px-8 py-3 border-2 border-gray-300  font-semibold rounded-lg hover:bg-gray-900 transition-all duration-200"
-            onClick={() => {downloadFileAtURL(Pdf_FILE)}}
+            <button 
+              className="px-8 py-3 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200"
+              onClick={() => downloadFileAtURL(Pdf_FILE)}
             >
               Download CV
             </button>
@@ -125,14 +125,13 @@ const Description = () => {
           { number: "24/7", label: "Support Available" },
         ].map((stat, index) => (
           <div key={index} className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold text-purple-600  mb-2">{stat.number}</div>
-            <div className=" text-sm lg:text-base">{stat.label}</div>
+            <div className="text-3xl lg:text-4xl font-bold text-purple-600 mb-2">{stat.number}</div>
+            <div className="text-gray-600 text-sm lg:text-base">{stat.label}</div>
           </div>
         ))}
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default Description
-
+export default Description;
