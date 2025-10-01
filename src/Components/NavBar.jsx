@@ -98,6 +98,15 @@ const NavBar = () => {
                   Contact Me
                 </button>
               </a>
+               <button
+              
+                className="hover:text-purple-600 px-2 py-1 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-purple-600 active:text-purple-600 transition-all duration-300 hover:scale-105"
+              >
+                <a href="#projects">
+                  Projects
+                </a>
+                
+              </button>
             </div>
 
             <div
@@ -166,6 +175,16 @@ const NavBar = () => {
                     onClick={() => setIsClicked(true)}
                   >
                     Contact Me
+                  </a>
+                </li>
+
+                 <li className="transform transition-all duration-300 hover:translate-x-2">
+                  <a
+                    href="#projects"
+                    className="block hover:text-purple-800 py-2 px-3 rounded-lg hover:bg-gray-800/50 transition-all duration-300"
+                    onClick={() => setIsClicked(true)}
+                  >
+                    Projects
                   </a>
                 </li>
               </ul>
