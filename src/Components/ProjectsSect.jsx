@@ -1,11 +1,40 @@
 import { motion } from "framer-motion"
 import alight1 from "../images/alight1.png"
-import alight2 from "../images/alight2.png"
+
 import { FaGithub, FaLink } from "react-icons/fa6"
 import { Link } from "react-router"
 import { filsContent } from "../contents/apiContent"
-import Projects from "../Projects.json"
+
 import { useContext } from "react"
+import WorldProject from "./WorldProject"
+
+
+const Projects=[
+  {
+        "id": 1,
+        "title": "Alight coding school website",
+        "subtitle": "worked on",
+        "branchs": [
+            "website",
+            "admin Panel"
+        ],
+        "description": "Alight Coding School is a platform created to support young people with dreams of becoming web developers. It offers accessible training programs. Our purpose is to guide students in applying their passion and building a future in tech.",
+        "links": [
+            {
+                "type": "github",
+                "label": "Visit GitHub",
+                "url": "https://github.com/eugide/alight-coding-school-website"
+            },
+            {
+                "type": "site",
+                "label": "Visit Site",
+                "url": "https://cs-website-1.onrender.com/"
+            }
+        ],
+        "image":alight1
+    },
+]
+
 const ProjectsSect = () => {
     const { isChange, setIsChange } = useContext(filsContent)
   return (
@@ -31,7 +60,7 @@ const ProjectsSect = () => {
 
       {
         Projects.map((project) => (
-           <div className="  bg-gradient-to-r from-blue-500/20 via-purple-500/20  to-blue-200  md:flex p-4 mb-2 rounded-lg gap-8">
+           <div className="  bg-gradient-to-r from-blue-500/20 via-purple-500/20  to-blue-200  lg:flex p-4 mb-2 rounded-lg gap-8">
         <div className="border-blue-500 border shadow-xl p-3 rounded-lg">
 
           <div className="">
@@ -43,11 +72,11 @@ const ProjectsSect = () => {
         </div>
 
         <div className="md:w-200">
-          <h2 className="md:text-2xl text-gray-950 border-b-blue-500 border-b-2  mt-4 pb-1 md:mt-0 mb-4 text-bold">{project.title}</h2>
+          <h2 className="text-2xl text-gray-950 border-b-blue-500 border-b-2  mt-4 pb-1 md:mt-0 mb-4 text-bold">{project.title}</h2>
           <span className="text-white font-bold ">{project.subtitle}</span>
 
 
-          <div className="sm:flex my-2 gap-5">
+          <div className="flex my-2 gap-2">
             <div className="border rounded-lg px-5 py-1 gap-1  mb-3 sm:mb-0">{project.branchs[0]}</div>
              <div className="border rounded-lg px-5 py-1 gap-1  mb-3 sm:mb-0">{project.branchs[1]}</div>
           
@@ -58,7 +87,7 @@ const ProjectsSect = () => {
           <div>
             <p className="my-4 text-sm text-black font-medium">{project.description}</p>
           </div>
-          <div className="sm:flex  sm:gap-6">
+          <div className="flex  gap-2">
 
             {project.links.map((link , index)=>(
                  <div className={`flex ${isChange? " bg-gray-900" : "bg-gray-300"} px-4 py-2 rounded-lg items-center gap-2 sm:mb-0 mb-2`}>
@@ -67,7 +96,7 @@ const ProjectsSect = () => {
                  href={link.url}
                  target="_blank"
                  rel="noopener noreferrer"
-                 className="sm:flex items-center sm:gap-2"
+                 className="flex items-center gap-2"
               >
               {link.type ==="github" ? <FaGithub/> : <FaLink/>}
               <span className="border-b-blue-500 border-b hover:border-none hover:text-blue-500 ">{link.label}</span>
@@ -81,6 +110,7 @@ const ProjectsSect = () => {
       </div>
         ))
       }
+      <WorldProject/>
      
     </div>
   )

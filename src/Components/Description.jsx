@@ -103,7 +103,7 @@ const Description = () => {
             </Link>
 
             <button 
-              className="px-8 py-3 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200"
+              className="px-8 py-3 border-2 bg-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200"
               onClick={() => downloadFileAtURL(Pdf_FILE)}
             >
               Download CV

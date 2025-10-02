@@ -54,7 +54,7 @@ const SectContact = () => {
     }
 
     emailjs
-      .sendForm("service_4bsv52r", "template_s01cp66", form.current, {
+      .sendForm("service_zo3i5y4", "template_s01cp66", form.current, {
         publicKey: "utz4OsEk8a0S0BuJS",
       })
       .then(
