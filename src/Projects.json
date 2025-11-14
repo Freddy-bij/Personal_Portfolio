@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "title": "Alight coding school website",
+        "subtitle": "worked on",
+        "branchs": [
+            "website",
+            "admin Panel"
+        ],
+        "description": "Alight Coding School is a platform created to support young people with dreams of becoming web developers. It offers accessible training programs. Our purpose is to guide students in applying their passion and building a future in tech.",
+        "links": [
+            {
+                "type": "github",
+                "label": "Visit GitHub",
+                "url": "https://github.com/eugide/alight-coding-school-website"
+            },
+            {
+                "type": "site",
+                "label": "Visit Site",
+                "url": "https://cs-website-1.onrender.com/"
+            }
+        ],
+        "image": "./src/images/alight1.png"
+    },
+    {
+        "id": 2,
+        "title": "world universities website",
+        "subtitle": "own Project",
+        "branchs": [
+            "website",
+            "admin Panel"
+        ],
+        "description": "World Universities is a platform that connects students with universities around the globe.It simplifies the search process by providing easy access to essential information.Our goal is to help every learner find the right institution to achieve their academic dreams.",
+        "links": [
+            {
+                "type": "github",
+                "label": "Visit GitHub",
+                "url": "https://github.com/Freddy-bij/world-universities-websity"
+            },
+            {
+                "type": "site",
+                "label": "Visit Site",
+                "url": "https://world-universities.vercel.app/"
+            }
+        ],
+        "image": "./src/images/univ1.png"
+    }
+]

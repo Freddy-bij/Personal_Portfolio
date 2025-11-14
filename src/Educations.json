@@ -1,16 +1,5 @@
 [
     {
-        "id":"1",
-        "date":"2014-2020",
-        "title":"Diploma",
-        "name":"Acount management and computer science",
-        "degree":"Diploma degree",
-        "grade":"A2",
-        "institution":"saint joseph institute",
-        "location":"goma"
-    },
-
-    {
         "id":"2",
         "date":"2024-2025",
         "title":"graduate",
