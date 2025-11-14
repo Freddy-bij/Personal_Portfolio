@@ -1,13 +1,25 @@
 [
+
+    {
+        "id":"1",
+        "date":"2014-2020",
+        "title":"Diploma",
+        "name":"Acount and management computer science",
+        "degree":"Diploma",
+        "grade":"A2",
+        "institution":"Institut saint Joseph",
+        "location":"DRC/ Goma"
+
+    },
     {
         "id":"2",
         "date":"2024-2025",
-        "title":"graduate",
-        "name":"software developer",
-        "degree":"junior web developer",
-        "grade":"entry",
-        "institution":"alight rwanda",
-        "location":"gatsibo"
+        "title":"Graduate",
+        "name":"Software Developer",
+        "degree":"Junior Web Developer",
+        "grade":"Entry",
+        "institution":"Alight Rwanda",
+        "location":"Gatsibo"
 
     }
 ]
