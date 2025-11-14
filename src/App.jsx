@@ -20,11 +20,8 @@ const App = () => {
 
               <Route element={<Layout />}>
                 <Route path='/' element={<Home />} />
-              
-            
               </Route>
             </Routes>
-
           </BrowserRouter>
         </div>
       </filsContent.Provider>
