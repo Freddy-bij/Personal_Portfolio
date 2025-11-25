@@ -5,7 +5,7 @@ import { FaGithub, FaLink } from "react-icons/fa6"
 import { Link } from "react-router"
 import { filsContent } from "../contents/apiContent"
 
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import WorldProject from "./WorldProject"
 
 
@@ -37,6 +37,7 @@ const Projects=[
 
 const ProjectsSect = () => {
     const { isChange, setIsChange } = useContext(filsContent)
+      const [isHovered, setIsHovered] = useState(false);
   return (
     <div id="projects" className="max-w-7xl mx-auto px-6 ">
       <motion.div
@@ -59,57 +60,111 @@ const ProjectsSect = () => {
 
 
       {
+  
         Projects.map((project) => (
-           <div className="  bg-gradient-to-r from-blue-500/20 via-purple-500/20  to-blue-200  lg:flex p-4 mb-2 rounded-lg gap-8">
-        <div className="border-blue-500 border shadow-xl p-3 rounded-lg">
-
-          <div className="">
-            <img src={project.image} alt="alight1" className="h-full" />
-          </div>
-
-
-
-        </div>
-
-        <div className="md:w-200">
-          <h2 className="text-2xl text-gray-950 border-b-blue-500 border-b-2  mt-4 pb-1 md:mt-0 mb-4 text-bold">{project.title}</h2>
-          <span className="text-white font-bold ">{project.subtitle}</span>
-
-
-          <div className="flex my-2 gap-2">
-            <div className="border rounded-lg px-5 py-1 gap-1  mb-3 sm:mb-0">{project.branchs[0]}</div>
-             <div className="border rounded-lg px-5 py-1 gap-1  mb-3 sm:mb-0">{project.branchs[1]}</div>
-          
-          </div>
-
-
-
-          <div>
-            <p className="my-4 text-sm text-black font-medium">{project.description}</p>
-          </div>
-          <div className="flex  gap-2">
-
-            {project.links.map((link , index)=>(
-                 <div className={`flex ${isChange? " bg-gray-900" : "bg-gray-300"} px-4 py-2 rounded-lg items-center gap-2 sm:mb-0 mb-2`}>
-              <a
-                 key={index}
-                 href={link.url}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="flex items-center gap-2"
+              <div
+                key={project.id}
+                className="relative rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden backdrop-blur-sm"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
               >
-              {link.type ==="github" ? <FaGithub/> : <FaLink/>}
-              <span className="border-b-blue-500 border-b hover:border-none hover:text-blue-500 ">{link.label}</span>
-              </a>
-            </div>
+          
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/25 to-pink-500/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-tl from-blue-400/10 via-transparent to-purple-400/10"></div>
+                
+       
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
+      
+                <div className="relative grid lg:grid-cols-2 gap-0">
+      
+                  <div className="relative p-8 lg:p-10 flex items-center justify-center">
+      
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-blue-500/15 to-transparent"></div>
+                    
+                    <div
+                      className={`
+                        relative rounded-xl overflow-hidden shadow-2xl border border-white/30
+                        transition-transform duration-500 
+                        ${isHovered ? "scale-105 rotate-1" : "scale-100"}
+                      `}
+                    >
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="h-full"
+                      />
+                 
+                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                    </div>
+                    
+                  
+                    <div className="absolute top-4 right-4 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-4 left-4 w-40 h-40 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
+                  </div>
+                  <div className="p-8 lg:p-10 flex flex-col justify-between">
+                    <div>
+          
+                      <div className="mb-6">
+                        <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-white/20 backdrop-blur-md rounded-full mb-3 border border-white/30">
+                          {project.subtitle}
+                        </span>
+                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight drop-shadow-sm">
+                          {project.title}
+                        </h2>
+                      </div>
+      
+                
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.branchs.map((branch, index) => (
+                          <span
+                            key={index}
+                            className="px-4 py-2 text-sm font-medium text-gray-800 bg-white/40 backdrop-blur-md rounded-lg hover:bg-white/60 transition-all border border-white/50 shadow-sm"
+                          >
+                            {branch}
+                          </span>
+                        ))}
+                      </div>
+      
+                  
+                      <p className="text-gray-900 font-medium leading-relaxed mb-8 drop-shadow-sm">
+                        {project.description}
+                      </p>
+                    </div>
+      
+                    <div className="flex flex-wrap gap-4">
+                      {project.links.map((link, index) => (
+                        <a
+                          key={index}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`
+                            flex items-center gap-2 px-6 py-3 rounded-lg font-medium
+                            transition-all duration-300 transform hover:scale-105 shadow-lg
+                            ${
+                              link.type === "github"
+                                ? "bg-gray-900 text-white hover:bg-gray-800"
+                                : "bg-blue-600 text-white hover:bg-blue-700"
+                            }
+                          `}
+                        >
+                          {link.type === "github" ? (
+                            <FaGithub className="text-xl" />
+                          ) : (
+                            <FaLink className="text-xl" />
+                          )}
+                          <span>{link.label}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+      
+      
+                
+                </div>
+              </div>
             ))}
-         
-           
-          </div>
-        </div>
-      </div>
-        ))
-      }
+      
       <WorldProject/>
      
     </div>
