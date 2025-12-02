@@ -3,83 +3,108 @@ import { useContext, useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import { FaLocationDot, FaPhone, FaPaperPlane } from "react-icons/fa6"
+import { FaLocationDot, FaPhone, FaPaperPlane,  } from "react-icons/fa6"
 import { MdEmail } from "react-icons/md"
 import { motion } from "framer-motion"
 import { filsContent } from "../contents/apiContent"
 
+
 const SectContact = () => {
   const { isChange, setIsChange } = useContext(filsContent)
-  const form = useRef()
-  const [errors, setErrors] = useState({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
+const [errors, setErrors] = useState({});
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  phone: "",
+  message: ""
+});
 
-  const validateForm = (data) => {
-    const newErrors = {}
-    if (!data.from_name.trim()) {
-      newErrors.from_name = "Name is required."
-    }
-    if (!data.from_email.trim()) {
-      newErrors.from_email = "Email is required."
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.from_email)) {
-      newErrors.from_email = "Invalid email format."
-    }
-    if (!data.message.trim()) {
-      newErrors.message = "Message is required."
-    }
-    return newErrors
+
+const validateForm = (values) => {
+  const errors = {};
+
+  if (!values.name.trim()) {
+    errors.name = "Please enter your name";
+  }
+  if (!values.email.trim()) {
+    errors.email = "Please enter your email";
+  } else if (!/^\S+@\S+\.\S+$/.test(values.email)) {
+    errors.email = "Enter a valid email";
+  }
+  if (!values.phone.trim()) {
+    errors.phone = "Please enter your phone number";
+
+  }else if (!/^\+?[1-9]\d{1,14}$/.test(values.phone)) {
+    errors.phone = "Enter a valid phone number";
+  }
+  if (!values.message.trim()) {
+    errors.message = "Please write a message";
   }
 
-  const sendEmail = (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  return errors;
+};
 
-    const data = {
-      from_name: form.current.from_name.value,
-      from_email: form.current.from_email.value,
-      message: form.current.message.value,
-    }
+const handlechange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const validationErrors = validateForm(data)
-    setErrors(validationErrors)
+ 
+  if (errors[e.target.name]) {
+    setErrors({ ...errors, [e.target.name]: "" });
+  }
+};
 
-    if (Object.keys(validationErrors).length > 0) {
-      toast.error(" Please fix the errors before sending.", {
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const validationErrors = validateForm(formData);
+  setErrors(validationErrors);
+
+ 
+  if (Object.keys(validationErrors).length > 0) {
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },  
+      body: JSON.stringify(formData)
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      toast.success("Message sent successfully!", {
         position: "top-center",
         autoClose: 3000,
-        theme: "dark",
-      })
-      setIsSubmitting(false)
-      return
+        theme: "colored"
+      });
+
+      setFormData({ name: "", email: "", phone: "" , message: "" });
+    } else {
+      toast.error(data.message, {
+        position: "top-center",
+        autoClose: 3000,
+        theme: "dark"
+      });
     }
 
-    emailjs
-      .sendForm("service_zo3i5y4", "template_s01cp66", form.current, {
-        publicKey: "utz4OsEk8a0S0BuJS",
-      })
-      .then(
-        () => {
-          toast.success(" Message successfully sent!", {
-            position: "top-center",
-            autoClose: 3000,
-            theme: "dark",
-          })
-          form.current.reset()
-          setErrors({})
-          setIsSubmitting(false)
-        },
-        (error) => {
-          toast.error("Failed to send message. Try again!", {
-            position: "top-center",
-            autoClose: 3000,
-            theme: "dark",
-          })
-          console.log("FAILED...", error.text)
-          setIsSubmitting(false)
-        },
-      )
+  } catch (error) {
+    toast.error("Oops, something went wrong", {
+      position: "top-center",
+      autoClose: 3000,
+      theme: "dark"
+    });
   }
 
+  setIsSubmitting(false);
+};
+
+    
   return (
     <div id="contact" className="min-h-screen  py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -202,39 +227,75 @@ const SectContact = () => {
             <div className= {`backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-white/20 ${isChange ? "bg-gray-900/80" :"bg-gray-300"}`}>
               <h3 className="text-xl sm:text-2xl font-bold  mb-6">Send me a message</h3>
 
-              <form ref={form} onSubmit={sendEmail} className="space-y-6">
+              <form  onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-semibold  mb-2">Full Name</label>
                   <input
                     type="text"
-                    name="from_name"
+                    name="name"
+                    value={formData.name}
+                    onChange={ (e) => {
+                      handlechange(e)
+                      if (errors.name) setErrors({...errors, name: ""});
+                    }}
                     placeholder="Enter your full name"
                     className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none  focus:shadow-lg ${
-                      errors.from_name ? "border-red-500 focus:border-red-500" : " focus:border-blue-500"
+                      errors.name ? "border-red-500 focus:border-red-500" : " focus:border-blue-500"
                     } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
                   />
-                  {errors.from_name && <p className="text-red-600 text-sm mt-2">{errors.from_name}</p>}
+                  {errors.name && <p className="text-red-600 text-sm mt-2">{errors.name}</p>}
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold  mb-2">Email Address</label>
                   <input
                     type="email"
-                    name="from_email"
+                    name="email"
+                    value={formData.email}
+                    onChange={ (e) => {
+                      handlechange(e)
+                      if (errors.email) setErrors({...errors, email: ""});
+                    }}
                     placeholder="Enter your email address"
                     className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none   focus:shadow-lg ${
-                      errors.from_email
+                      errors.email
                         ? "border-red-500 focus:border-red-500"
                         : " focus:border-blue-500"
                     } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
                   />
-                  {errors.from_email && <p className="text-red-600 text-sm mt-2">{errors.from_email}</p>}
+                  {errors.email && <p className="text-red-600 text-sm mt-2">{errors.email}</p>}
+                </div>
+
+
+                <div>
+                  <label className="block text-sm font-semibold  mb-2">Phone Number</label>
+                  <input
+                    type="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={ (e) => {
+                      handlechange(e)
+                      if (errors.phone) setErrors({...errors, phone: ""});
+                    }}
+                    placeholder="Enter your email address"
+                    className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none   focus:shadow-lg ${
+                      errors.phone
+                        ? "border-red-500 focus:border-red-500"
+                        : " focus:border-blue-500"
+                    } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
+                  />
+                  {errors.phone && <p className="text-red-600 text-sm mt-2">{errors.phone}</p>}
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold  mb-2">Message</label>
                   <textarea
                     name="message"
+                    value={formData.message}
+                    onChange={(e) =>{
+                      handlechange(e)
+                      if ( errors.message) setErrors({...errors, message: ""});
+                    }}
                     placeholder="Tell me about your project..."
                     rows="6"
                     className={`w-full p-4 bg-white/50 text-black border-2 rounded-xl outline-none transition-all duration-300 focus:bg-white focus:shadow-lg resize-none ${
