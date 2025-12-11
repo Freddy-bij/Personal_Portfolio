@@ -11,10 +11,13 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    process.env.FRONTEND_URL, 
+    "https://freddy-personal-portfolio.vercel.app" 
   ],
+  methods: "GET,POST,PUT,DELETE,OPTIONS",
   credentials: true
 }));
+
+app.options("*", cors());  
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -24,7 +27,6 @@ app.use("/api", router);
 app.get("/", (req, res) => {
   res.json("Portfolio api is running");
 });
-
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -37,3 +39,4 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
