@@ -19,6 +19,7 @@ const SendEmailMessage = async (req, res) => {
       });
     }
 
+
     const phoneRegex = /^(\+?250)?0?7[2389]\d{7}$/;
     if (!phoneRegex.test(phone)) {
       return res.status(400).json({
@@ -28,26 +29,29 @@ const SendEmailMessage = async (req, res) => {
     }
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        pass: process.env.EMAIL_PASS, 
       }
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
       replyTo: email,
       subject: `New Contact Message from ${name}`,
       html: `
-        <h2>New Contact Form Message</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>
+        <div style="font-family: Arial; padding: 20px;">
+          <h2>New Contact Form Message</h2>
+
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+
+          <h3>Message:</h3>
+          <p>${message.replace(/\n/g, "<br>")}</p>
+        </div>
       `
     };
 
@@ -59,15 +63,13 @@ const SendEmailMessage = async (req, res) => {
     });
 
   } catch (error) {
-    console.log("SendEmailMessage Error:", error);
+    console.error("SendEmailMessage Error:", error.message);
     return res.status(500).json({
       success: false,
-      message: "Server Error",
+      message: "Server Error. Please try again later.",
       error: error.message
     });
   }
 };
 
 module.exports = SendEmailMessage;
-
-
