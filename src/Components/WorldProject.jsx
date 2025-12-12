@@ -33,7 +33,7 @@ const WorldProject = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div className="max-w-7xl mx-auto ">
       {Projects.map((project) => (
         <div
           key={project.id}

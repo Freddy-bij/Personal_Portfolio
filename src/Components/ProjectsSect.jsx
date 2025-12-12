@@ -1,9 +1,11 @@
 import { motion } from "framer-motion"
 import alight1 from "../images/alight1.png"
+import klab from "../images/klab.png"
 
 import { FaGithub, FaLink } from "react-icons/fa6"
 import { Link } from "react-router"
 import { filsContent } from "../contents/apiContent"
+
 
 import { useContext, useState } from "react"
 import WorldProject from "./WorldProject"
@@ -32,6 +34,30 @@ const Projects=[
             }
         ],
         "image":alight1
+    },
+
+    {
+        "id": 1,
+        "title": "Finance track website",
+        "subtitle": "Own Project",
+        "branchs": [
+            "website",
+            "admin Panel"
+        ],
+        "description": "Finance Track Website is a personal finance web application that helps users manage income, expenses, and categories with a clean and intuitive interface. It includes real-time tracking, data storage with Firestore, and responsive UI built with HTML, CSS, and JavaScript.",
+        "links": [
+            {
+                "type": "github",
+                "label": "Visit GitHub",
+                "url": "https://github.com/Freddy-bij/klab-finance-track-project"
+            },
+            {
+                "type": "site",
+                "label": "Visit Site",
+                "url": "https://klab-finance-track-project.vercel.app/"
+            }
+        ],
+        "image":klab
     },
 ]
 
@@ -64,7 +90,7 @@ const ProjectsSect = () => {
         Projects.map((project) => (
               <div
                 key={project.id}
-                className="relative rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden backdrop-blur-sm"
+                className="relative rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden backdrop-blur-sm mb-4"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
@@ -75,7 +101,7 @@ const ProjectsSect = () => {
        
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
       
-                <div className="relative grid lg:grid-cols-2 gap-0">
+                <div className="relative grid lg:grid-cols-2">
       
                   <div className="relative p-8 lg:p-10 flex items-center justify-center">
       
