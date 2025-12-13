@@ -4,7 +4,7 @@ const SendEmailMessage = require("../controller/Contact.controller");
 
 const router = express.Router();
 
-router.post("/contact", SendEmailMessage);
+router.post("/", SendEmailMessage);
 
 module.exports = router;
 
