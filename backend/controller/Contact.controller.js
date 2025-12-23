@@ -28,20 +28,23 @@ const SendEmailMessage = async (req, res) => {
       });
     }
 
+
+
     const transporter = nodemailer.createTransport({
-      // service: "gmail",
-      host: "smtp.gmail.com", 
-      port: 587,             
-      secure: false,
-      requireTLS: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      tls:{
-        rejectUnauthorized: false
-      }
-    });
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, 
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false, 
+    minVersion: "TLSv1.2"
+  },
+  connectionTimeout: 20000, 
+  greetingTimeout: 20000,   
+});
 
     transporter.verify(function (error, success) {
   if (error) {
