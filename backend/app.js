@@ -9,17 +9,17 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://freddy-personal-portfolio.vercel.app",
-    "https://freddy-bij-personal-portfolio.onrender.com"
-  ],
-  methods: ["GET", "POST", "OPTIONS"],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     "https://freddy-personal-portfolio.vercel.app",
+//     "https://freddy-bij-personal-portfolio.onrender.com"
+//   ],
+//   methods: ["GET", "POST", "OPTIONS"],
+//   credentials: true
+// }));
 
-
+app.use(cors())
 
 app.use(express.json());
 app.use("/api/contact", router);
