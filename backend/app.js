@@ -12,7 +12,8 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://freddy-personal-portfolio.vercel.app"
+    "https://freddy-personal-portfolio.vercel.app",
+    "https://freddy-bij-personal-portfolio.onrender.com"
   ],
   methods: ["GET", "POST", "OPTIONS"],
   credentials: true
