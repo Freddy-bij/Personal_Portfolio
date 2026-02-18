@@ -10,23 +10,23 @@ const Card = ({ education }) => {
   const {isChange , setIsChange}=useContext(filsContent)
   return (
     <div
-      className={`group relative ${isChange? "bg-white/80" : " bg-gradient-to-r from-blue-500/200 via-purple-500/20  to-blue-200" }  backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500`}
+      className={`group relative ${isChange? "bg-white/80" : " bg-gradient-to-r from-purple-600/20 via-purple-600/20  to-purple-600/20" }  backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500`}
     >
      
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-blue-50/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-purple-600/10 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
       <div className="relative z-10">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 mb-6">
           <motion.div
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 text-sm font-semibold rounded-full shadow-sm hover:shadow-md transition-all duration-300 w-fit"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-purple-600/10 text-purple-600 text-sm font-semibold rounded-full shadow-sm hover:shadow-md transition-all duration-300 w-fit"
             whileHover={{ scale: 1.05 }}
           >
-            <IoCalendarNumberSharp className="text-blue-600" />
+            <IoCalendarNumberSharp className="text-purple-600" />
             <span>{education.date}</span>
           </motion.div>
 
           <motion.div
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-fit"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-fit"
             whileHover={{ scale: 1.05 }}
           >
             <FaUserGraduate />
@@ -35,14 +35,14 @@ const Card = ({ education }) => {
         </div>
         <div className="flex flex-wrap gap-2 sm:gap-3 mb-4">
           <motion.div
-            className="px-3 sm:px-4 py-2 bg-white/90 backdrop-blur-sm text-gray-800 rounded-xl font-semibold shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
+            className="px-3 sm:px-4 py-2 bg-white/90 backdrop-blur-sm text-gray-900 rounded-xl font-semibold shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
             whileHover={{ scale: 1.02 }}
           >
             <p className="text-sm sm:text-base">{education.degree}</p>
           </motion.div>
 
           <motion.div
-            className="px-3 sm:px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 rounded-xl font-semibold shadow-sm border border-green-200 hover:shadow-md transition-all duration-300"
+            className="px-3 sm:px-4 py-2 bg-purple-600/10 text-purple-600 rounded-xl font-semibold shadow-sm border border-purple-600/20 hover:shadow-md transition-all duration-300"
             whileHover={{ scale: 1.02 }}
           >
             <p className="text-sm sm:text-base">{education.grade}</p>
@@ -63,11 +63,11 @@ const Card = ({ education }) => {
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-lg group-hover/item:shadow-xl transition-all duration-300">
+            <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center shadow-lg group-hover/item:shadow-xl transition-all duration-300">
               <LuSchool className="text-lg" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm text-gray-600 font-medium">Institution</p>
+              <p className="text-sm text-gray-500 font-medium">Institution</p>
               <p className="text-gray-900 font-semibold text-base sm:text-lg truncate">{education.institution}</p>
             </div>
           </motion.div>
@@ -76,18 +76,18 @@ const Card = ({ education }) => {
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full flex items-center justify-center shadow-lg group-hover/item:shadow-xl transition-all duration-300">
+            <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center shadow-lg group-hover/item:shadow-xl transition-all duration-300">
               <IoLocationSharp className="text-lg" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm text-gray-600 font-medium">Location</p>
+              <p className="text-sm text-gray-500 font-medium">Location</p>
               <p className="text-gray-900 font-semibold text-base sm:text-lg truncate">{education.location}</p>
             </div>
           </motion.div>
         </div>
 
-        <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        <div className="absolute top-4 right-4 w-20 h-20 bg-purple-600/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute bottom-4 left-4 w-16 h-16 bg-purple-600/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
       </div>
 
       

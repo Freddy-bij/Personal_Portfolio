@@ -3,11 +3,9 @@ import alight1 from "../images/alight1.png"
 import klab from "../images/klab.png"
 
 import { FaGithub, FaLink } from "react-icons/fa6"
-import { Link } from "react-router"
-import { filsContent } from "../contents/apiContent"
 
 
-import { useContext, useState } from "react"
+import { useState } from "react"
 import WorldProject from "./WorldProject"
 
 
@@ -62,7 +60,6 @@ const Projects=[
 ]
 
 const ProjectsSect = () => {
-    const { isChange, setIsChange } = useContext(filsContent)
       const [isHovered, setIsHovered] = useState(false);
   return (
     <div id="projects" className="max-w-7xl mx-auto px-6 ">
@@ -73,11 +70,11 @@ const ProjectsSect = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-6">
-          <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
+          <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
           <span className="text-purple-600  font-semibold">Projects</span>
         </div>
         <h2 className="text-4xl lg:text-5xl font-bold text-purple-600  mb-4">
-          Projects I've
+          Projects I&apos;ve
           <span className="block text-purple-600 ">
             Worked on
           </span>
@@ -95,8 +92,8 @@ const ProjectsSect = () => {
                 onMouseLeave={() => setIsHovered(false)}
               >
           
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/25 to-pink-500/20"></div>
-                <div className="absolute inset-0 bg-gradient-to-tl from-blue-400/10 via-transparent to-purple-400/10"></div>
+                <div className="absolute inset-0 bg-purple-600/30"></div>
+                <div className="absolute inset-0 bg-purple-600/10"></div>
                 
        
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
@@ -105,7 +102,7 @@ const ProjectsSect = () => {
       
                   <div className="relative p-8 lg:p-10 flex items-center justify-center">
       
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-blue-500/15 to-transparent"></div>
+                    <div className="absolute inset-0 bg-purple-600/20"></div>
                     
                     <div
                       className={`
@@ -120,12 +117,12 @@ const ProjectsSect = () => {
                         className="h-full"
                       />
                  
-                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                      <div className="absolute inset-0 bg-purple-600/20"></div>
                     </div>
                     
                   
-                    <div className="absolute top-4 right-4 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute bottom-4 left-4 w-40 h-40 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute top-4 right-4 w-32 h-32 bg-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-4 left-4 w-40 h-40 bg-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
                   </div>
                   <div className="p-8 lg:p-10 flex flex-col justify-between">
                     <div>
@@ -144,7 +141,7 @@ const ProjectsSect = () => {
                         {project.branchs.map((branch, index) => (
                           <span
                             key={index}
-                            className="px-4 py-2 text-sm font-medium text-gray-800 bg-white/40 backdrop-blur-md rounded-lg hover:bg-white/60 transition-all border border-white/50 shadow-sm"
+                            className="px-4 py-2 text-sm font-medium text-gray-900 bg-white/40 backdrop-blur-md rounded-lg hover:bg-white/60 transition-all border border-white/50 shadow-sm"
                           >
                             {branch}
                           </span>
@@ -169,8 +166,8 @@ const ProjectsSect = () => {
                             transition-all duration-300 transform hover:scale-105 shadow-lg
                             ${
                               link.type === "github"
-                                ? "bg-gray-900 text-white hover:bg-gray-800"
-                                : "bg-blue-600 text-white hover:bg-blue-700"
+                                ? "bg-gray-900 text-white hover:bg-gray-900/80"
+                                : "bg-purple-600 text-white hover:bg-purple-600/80"
                             }
                           `}
                         >

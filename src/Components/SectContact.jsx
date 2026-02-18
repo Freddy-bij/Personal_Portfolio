@@ -119,7 +119,7 @@ const handleSubmit = async (e) => {
           transition={{ duration: 0.8 }}
         >
           <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-4 sm:mb-6">
-            <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
             <span className="text-sm sm:text-base text-gray-700 font-semibold">Get In Touch</span>
           </div>
 
@@ -162,41 +162,41 @@ const handleSubmit = async (e) => {
 
                 <div className="space-y-4">
                   <motion.div
-                    className="flex items-center gap-4 p-4 bg-blue-300 rounded-xl hover:shadow-md transition-all duration-300"
+                    className="flex items-center gap-4 p-4 bg-purple-600/10 rounded-xl hover:shadow-md transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                      <FaLocationDot className=" text-lg" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                      <FaLocationDot className="text-white text-lg" />
                     </div>
                     <div>
-                      <p className={`text-sm  ${isChange? "text-gray-600" : "text-white"} font-medium`}>Location</p>
-                      <p className=" font-semibold">Kigali, Kimisagara</p>
+                      <p className={`text-sm  ${isChange? "text-gray-500" : "text-gray-500"} font-medium`}>Location</p>
+                      <p className="text-gray-900 font-semibold">Kigali, Kimisagara</p>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    className="flex items-center gap-4 p-4 bg-blue-700/60 rounded-xl hover:shadow-md transition-all duration-300"
+                    className="flex items-center gap-4 p-4 bg-purple-600/10 rounded-xl hover:shadow-md transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-600 to-blue-600 rounded-xl flex items-center justify-center">
-                      <FaPhone className=" text-lg" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                      <FaPhone className="text-white text-lg" />
                     </div>
                     <div>
-                      <p className={`text-sm  ${isChange? "text-gray-600" : "text-white"} font-medium`}>Phone</p>
-                      <p className=" font-semibold">+250792404909</p>
+                      <p className={`text-sm  ${isChange? "text-gray-500" : "text-gray-500"} font-medium`}>Phone</p>
+                      <p className="text-gray-900 font-semibold">+250792404909</p>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    className="flex items-center gap-4 p-4 bg-gray-500 rounded-xl hover:shadow-md transition-all duration-300"
+                    className="flex items-center gap-4 p-4 bg-purple-600/10 rounded-xl hover:shadow-md transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
-                      <MdEmail className=" text-lg" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                      <MdEmail className="text-white text-lg" />
                     </div>
                     <div>
-                      <p className={`text-sm  ${isChange? "text-gray-600" : "text-white"} font-medium`}>Email</p>
-                      <p className=" font-semibold">freddybijanja31@gmail.com</p>
+                      <p className={`text-sm  ${isChange? "text-gray-500" : "text-gray-500"} font-medium`}>Email</p>
+                      <p className="text-gray-900 font-semibold">freddybijanja31@gmail.com</p>
                     </div>
                   </motion.div>
                 </div>
@@ -207,8 +207,8 @@ const handleSubmit = async (e) => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-800 rounded-full">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-600/10 text-purple-600 rounded-full">
+                    <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
                     <span className="text-sm font-semibold">Available for new projects</span>
                   </div>
                 </motion.div>
@@ -240,7 +240,7 @@ const handleSubmit = async (e) => {
                     }}
                     placeholder="Enter your full name"
                     className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none  focus:shadow-lg ${
-                      errors.name ? "border-red-500 focus:border-red-500" : " focus:border-blue-500"
+                      errors.name ? "border-red-500 focus:border-red-500" : " focus:border-purple-600"
                     } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
                   />
                   {errors.name && <p className="text-red-600 text-sm mt-2">{errors.name}</p>}
@@ -260,7 +260,7 @@ const handleSubmit = async (e) => {
                     className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none   focus:shadow-lg ${
                       errors.email
                         ? "border-red-500 focus:border-red-500"
-                        : " focus:border-blue-500"
+                        : " focus:border-purple-600"
                     } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
                   />
                   {errors.email && <p className="text-red-600 text-sm mt-2">{errors.email}</p>}
@@ -281,7 +281,7 @@ const handleSubmit = async (e) => {
                     className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none   focus:shadow-lg ${
                       errors.phone
                         ? "border-red-500 focus:border-red-500"
-                        : " focus:border-blue-500"
+                        : " focus:border-purple-600"
                     } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
                   />
                   {errors.phone && <p className="text-red-600 text-sm mt-2">{errors.phone}</p>}
@@ -299,7 +299,7 @@ const handleSubmit = async (e) => {
                     placeholder="Tell me about your project..."
                     rows="6"
                     className={`w-full p-4 bg-white/50 text-black border-2 rounded-xl outline-none transition-all duration-300 focus:bg-white focus:shadow-lg resize-none ${
-                      errors.message ? "border-red-500 focus:border-red-500" : " focus:border-blue-500"
+                      errors.message ? "border-red-500 focus:border-red-500" : " focus:border-purple-600"
                     } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
                   ></textarea>
                   {errors.message && <p className="text-red-600 text-sm mt-2">{errors.message}</p>}
@@ -308,7 +308,7 @@ const handleSubmit = async (e) => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600  font-bold rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 ${
+                  className={`w-full py-4 px-6 bg-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 ${
                     isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                   }`}
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}

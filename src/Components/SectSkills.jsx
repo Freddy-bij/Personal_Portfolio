@@ -8,45 +8,35 @@ import react from "../images/react.svg"
 import git from "../images/git.svg"
 import tailwind from "../images/tailwind.svg"
 import figma from "../images/figma.svg"
+import typescript from "../images/typescript.svg"
+import firebase from "../images/firebase.svg"
 import nodejs from "../images/nodejs.svg"
 import { useContext } from "react"
 import { filsContent } from "../contents/apiContent"
 
 
 const skills = [
-  { src: htlm, title: "HTML", category: "Frontend", level: 95 },
-  { src: css, title: "CSS", category: "Frontend", level: 90 },
-  { src: figma, title: "Figma", category: "Design", level: 85 },
-  { src: tailwind, title: "Tailwind", category: "Frontend", level: 92 },
+  { src: htlm, title: "HTML", category: "Frontend", level: 98 },
+  { src: css, title: "CSS", category: "Frontend", level: 98 },
+  { src: figma, title: "Figma", category: "Design", level: 92 },
+  { src: tailwind, title: "Tailwind", category: "Frontend", level: 96 },
   { src: javascript, title: "JavaScript", category: "Frontend", level: 88 },
   { src: react, title: "React", category: "Frontend", level: 90 },
   { src: git, title: "Git", category: "Tools", level: 85 },
-  { src: nodejs, title: "Node.js", category: "Backend", level: 82 },
+  { src: nodejs, title: "Node.js", category: "Backend", level: 88 },
+  { src: typescript, title: "Typescript", category: "Frontend", level: 85 },
+  { src: firebase, title: "Firebase", category: "Backend", level: 80 },
 ]
 
 const categoryColors = {
-  Frontend: "from-blue-500 to-cyan-500",
-  Backend: "from-green-500 to-emerald-500",
-  Design: "from-purple-500 to-pink-500",
-  Tools: "from-orange-500 to-red-500",
-}
-
-const animationVariants = {
-  hidden: { opacity: 0, y: 50, scale: 0.8 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
+  Frontend: "from-purple-600 to-purple-600",
+  Backend: "from-purple-600 to-purple-600",
+  Design: "from-purple-600 to-purple-600",
+  Tools: "from-purple-600 to-purple-600",
 }
 
 const SectSkills = () => {
-   const { isChange, setIsChange } = useContext(filsContent)
+   const { isChange } = useContext(filsContent)
   return (
     <div id="skills" className="min-h-screen  py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +48,7 @@ const SectSkills = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="inline-flex items-center text-gray-900 gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-4 sm:mb-6">
-            <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
             <span className="text-sm sm:text-base  font-semibold">Technical Expertise</span>
           </div>
 
@@ -79,20 +69,20 @@ const SectSkills = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           {skills.map((skill, i) => (
             <div
-
+              key={skill.title}
               className="group relative"
             >
            
-              <div className="relative bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-blue-400/10 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="relative bg-linear-to-r from-purple-600/10 via-purple-600/10 to-purple-600/10 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
 
                 <div
-                  className={`absolute -top-2 -right-2 px-2 py-1 bg-gradient-to-r ${categoryColors[skill.category]}  text-xs font-semibold rounded-full shadow-lg`}
+                  className={`absolute -top-2 -right-2 px-2 py-1 bg-linear-to-r ${categoryColors[skill.category]} text-white text-xs font-semibold rounded-full shadow-lg`}
                 >
                   {skill.category}
                 </div>
                 <div className="flex flex-col items-center space-y-3 sm:space-y-4">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                    <div className="absolute inset-0 bg-purple-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                     <div className="relative bg-white/90 p-3 sm:p-4 rounded-2xl shadow-lg">
                       <img
                         src={skill.src || "/placeholder.svg"}
@@ -113,7 +103,7 @@ const SectSkills = () => {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
                       <motion.div
-                        className={`h-full bg-gradient-to-r ${categoryColors[skill.category]} rounded-full`}
+                        className={`h-full bg-linear-to-r ${categoryColors[skill.category]} rounded-full`}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
@@ -152,9 +142,9 @@ const SectSkills = () => {
               >
                 <div className="text-center">
                   <div
-                    className={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r ${gradient} rounded-xl mb-3`}
+                    className={`inline-flex items-center justify-center w-12 h-12 bg-linear-to-r ${gradient} rounded-xl mb-3`}
                   >
-                    <span className=" font-bold text-lg">{categorySkills.length}</span>
+                    <span className="text-white font-bold text-lg">{categorySkills.length}</span>
                   </div>
                   <h3 className="font-bold  mb-1">{category}</h3>
                   <p className="text-sm  mb-2">{categorySkills.length} Skills</p>
@@ -175,8 +165,8 @@ const SectSkills = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <p className="text-base sm:text-lg mb-6">Ready to bring these skills to your next project?</p>
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600  font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-            <a href="#contact"> Let's Work Together</a>
+          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+            <a href="#contact"> Let&apos;s Work Together</a>
           </button>
         </motion.div>
       </div>

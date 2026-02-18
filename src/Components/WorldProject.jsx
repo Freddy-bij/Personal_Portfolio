@@ -42,8 +42,8 @@ const WorldProject = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
     
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/25 to-pink-500/20"></div>
-          <div className="absolute inset-0 bg-gradient-to-tl from-blue-400/10 via-transparent to-purple-400/10"></div>
+          <div className="absolute inset-0 bg-purple-600/30"></div>
+          <div className="absolute inset-0 bg-purple-600/10"></div>
           
  
           <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
@@ -67,7 +67,7 @@ const WorldProject = () => {
                   {project.branchs.map((branch, index) => (
                     <span
                       key={index}
-                      className="px-4 py-2 text-sm font-medium text-gray-800 bg-white/40 backdrop-blur-md rounded-lg hover:bg-white/60 transition-all border border-white/50 shadow-sm"
+                      className="px-4 py-2 text-sm font-medium text-gray-900 bg-white/40 backdrop-blur-md rounded-lg hover:bg-white/60 transition-all border border-white/50 shadow-sm"
                     >
                       {branch}
                     </span>
@@ -92,8 +92,8 @@ const WorldProject = () => {
                       transition-all duration-300 transform hover:scale-105 shadow-lg
                       ${
                         link.type === "github"
-                          ? "bg-gray-900 text-white hover:bg-gray-800"
-                          : "bg-blue-600 text-white hover:bg-blue-700"
+                          ? "bg-gray-900 text-white hover:bg-gray-900/80"
+                          : "bg-purple-600 text-white hover:bg-purple-600/80"
                       }
                     `}
                   >
@@ -111,7 +111,7 @@ const WorldProject = () => {
 
             <div className="relative p-8 lg:p-10 flex items-center justify-center">
 
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-blue-500/15 to-transparent"></div>
+              <div className="absolute inset-0 bg-purple-600/20"></div>
               
               <div
                 className={`
@@ -126,12 +126,12 @@ const WorldProject = () => {
                   className=""
                 />
            
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-purple-600/20"></div>
               </div>
               
             
-              <div className="absolute top-4 right-4 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute bottom-4 left-4 w-40 h-40 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute top-4 right-4 w-32 h-32 bg-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-4 left-4 w-40 h-40 bg-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
             </div>
           </div>
         </div>

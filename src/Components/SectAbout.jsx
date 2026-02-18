@@ -42,7 +42,7 @@ const downloadFileAtURL = (url) => {
           transition={{ duration: 0.8 }}
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-6">
-            <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
             <span className="text-purple-600  font-semibold">About Me</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-purple-600  mb-4">
@@ -65,7 +65,7 @@ const downloadFileAtURL = (url) => {
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed">
                   I'm a passionate full-stack developer who bridges the gap between{" "}
-                  <span className="font-semibold text-blue-600">business strategy</span> and{" "}
+                  <span className="font-semibold text-purple-600">business strategy</span> and{" "}
                   <span className="font-semibold text-purple-600">technical excellence</span>. With my background in
                   Business Management and Computer Science, I don't just build applications—I craft solutions that drive
                   growth.
@@ -80,9 +80,9 @@ const downloadFileAtURL = (url) => {
                 </p>
                 <div className="grid sm:grid-cols-3 gap-4 pt-4">
                   {[
-                    { icon: FaCode, label: "Clean Code", color: "bg-blue-100 text-blue-600" },
-                    { icon: FaLaptopCode, label: "Full Stack", color: "bg-purple-100 text-purple-600" },
-                    { icon: FaRocket, label: "Performance", color: "bg-green-100 text-green-600" },
+                    { icon: FaCode, label: "Clean Code", color: "bg-purple-600/10 text-purple-600" },
+                    { icon: FaLaptopCode, label: "Full Stack", color: "bg-purple-600/10 text-purple-600" },
+                    { icon: FaRocket, label: "Performance", color: "bg-purple-600/10 text-purple-600" },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
@@ -104,7 +104,7 @@ const downloadFileAtURL = (url) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+              <button className="group px-8 py-4 bg-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
                 <span><a href="#contact">Let's Work Together</a></span>
                 <FaArrowUpRightFromSquare className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
@@ -126,7 +126,7 @@ const downloadFileAtURL = (url) => {
                 to="https://github.com/Freddy-bij"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-4 ${isChange? "bg-white/70" : "bg-gray-200"} backdrop-blur-sm text-gray-700 rounded-2xl hover:bg-gray-900 hover:text-white transition-all duration-300 group border border-gray-200`}
+                className={`p-4 ${isChange? "bg-white/70" : "bg-gray-200"} backdrop-blur-sm text-gray-900 rounded-2xl hover:bg-gray-900 hover:text-white transition-all duration-300 group border border-gray-200`}
               >
                 <FaGithub className="whreh-5 group-hover:scale-110 transition-transform" />
               </Link>
@@ -134,7 +134,7 @@ const downloadFileAtURL = (url) => {
                 to="https://www.linkedin.com/in/freddy-bijanja-054b3031a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-4 ${isChange? "bg-white/70 " : "bg-gray-200"} backdrop-blur-sm text-gray-700 rounded-2xl hover:bg-blue-600 hover:text-white transition-all duration-300 group border border-gray-200`}
+                className={`p-4 ${isChange? "bg-white/70 " : "bg-gray-200"} backdrop-blur-sm text-gray-900 rounded-2xl hover:bg-purple-600 hover:text-white transition-all duration-300 group border border-gray-200`}
               >
                 <FaLinkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </Link>
@@ -149,11 +149,11 @@ const downloadFileAtURL = (url) => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="relative">
-              <div className="absolute inset-0">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-20 animate-pulse"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full opacity-30"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border-2 border-blue-200 rounded-full"></div>
-              </div>
+            <div className="relative z-10">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-600/20 rounded-full opacity-20 animate-pulse"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-600/30 rounded-full opacity-30"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border-2 border-purple-600/20 rounded-full"></div>
+            </div>
               <div className="relative z-10 bg-white/80- backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/20">
                 <div className="relative overflow-hidden rounded-2xl">
                   <img
@@ -174,10 +174,10 @@ const downloadFileAtURL = (url) => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { number: "20+", label: "Projects", icon: "🚀", color: "from-blue-500 to-blue-600" },
-                { number: "100%", label: "Satisfaction", icon: "⭐", color: "from-green-500 to-green-600" },
-                { number: "24/7", label: "Support", icon: "💬", color: "from-purple-500 to-purple-600" },
-                { number: "2+", label: "Years Exp", icon: "🎯", color: "from-orange-500 to-orange-600" },
+                { number: "20+", label: "Projects", icon: "🚀", color: "from-purple-600 to-purple-600" },
+                { number: "100%", label: "Satisfaction", icon: "⭐", color: "from-purple-600 to-purple-600" },
+                { number: "24/7", label: "Support", icon: "💬", color: "from-purple-600 to-purple-600" },
+                { number: "2+", label: "Years Exp", icon: "🎯", color: "from-purple-600 to-purple-600" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -199,12 +199,12 @@ const downloadFileAtURL = (url) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
             >
-              <h3 className="font-semibold text-blue-600 mb-4">Tech Stack</h3>
+              <h3 className="font-semibold text-purple-600 mb-4">Tech Stack</h3>
               <div className="flex flex-wrap gap-2">
                 {["React", "Node.js", "TypeScript", "Tailwind", "MongoDB", "Framer Motion"].map((tech, index) => (
                   <span
                     key={tech}
-                    className={`px-3 py-1  ${isChange ? "bg-gray-900/80" : "bg-gradient-to-r from-gray-100 to-gray-200"} text-sm font-medium rounded-lg hover:from-blue-100 hover:to-purple-100 hover:text-blue-700 transition-all cursor-default`}
+                    className={`px-3 py-1  ${isChange ? "bg-gray-900/80 text-white" : "bg-gray-500/10 text-gray-900"} text-sm font-medium rounded-lg hover:bg-purple-600 hover:text-white transition-all cursor-default`}
                   >
                     {tech}
                   </span>

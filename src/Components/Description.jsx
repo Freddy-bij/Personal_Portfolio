@@ -27,7 +27,7 @@ const Description = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl transform rotate-3"></div>
+            <div className="absolute inset-0 bg-purple-600 rounded-2xl transform rotate-3"></div>
             <div className="relative bg-white p-2 rounded-2xl shadow-2xl">
               <img
                 src={Image}
@@ -49,7 +49,7 @@ const Description = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-purple-600/10 text-purple-600 text-sm font-semibold rounded-full mb-4">
               Welcome to my portfolio
             </span>
             <h1 className="text-4xl lg:text-5xl font-bold text-purple-600 leading-tight">
@@ -67,7 +67,7 @@ const Description = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p className="text-lg leading-relaxed">
-              Hello, I'm <span className="font-semibold text-purple-600">Freddy BIJANJA</span>, a passionate full-stack
+              Hello, I&apos;m <span className="font-semibold text-purple-600">Freddy BIJANJA</span>, a passionate full-stack
               developer dedicated to crafting exceptional digital experiences. I specialize in building modern, scalable
               web applications using cutting-edge technologies.
             </p>
@@ -83,8 +83,8 @@ const Description = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            {["React", "Next.js", "Node.js", "TypeScript", "MongoDB"].map((tech, index) => (
-              <span key={tech} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg">
+            {["React", "Next.js", "Node.js", "TypeScript", "MongoDB"].map((tech) => (
+              <span key={tech} className="px-3 py-1 bg-gray-500 text-white text-sm font-medium rounded-lg">
                 {tech}
               </span>
             ))}
@@ -97,12 +97,12 @@ const Description = () => {
             transition={{ duration: 0.6, delay: 1 }}
           >
             <Link to="https://github.com/Freddy-bij" target="_blank">
-              <button className="px-8 py-3 bg-gradient-to-r w-full from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+              <button className="px-8 py-3 bg-purple-600 w-full text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
                 View My Work
               </button>
             </Link>
 
-            <button className="px-8 py-3 border-2 border-gray-300  font-semibold rounded-lg hover:bg-gray-900 transition-all duration-200"
+            <button className="px-8 py-3 border-2 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200"
             onClick={() => {downloadFileAtURL(Pdf_FILE)}}
             >
               Download CV
@@ -125,7 +125,7 @@ const Description = () => {
         ].map((stat, index) => (
           <div key={index} className="text-center">
             <div className="text-3xl lg:text-4xl font-bold text-purple-600 mb-2">{stat.number}</div>
-            <div className="text-gray-600 text-sm lg:text-base">{stat.label}</div>
+            <div className="text-gray-500 text-sm lg:text-base">{stat.label}</div>
           </div>
         ))}
       </motion.div>
