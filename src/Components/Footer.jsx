@@ -1,15 +1,14 @@
-import { FaFacebookF, FaGithub, FaInstagram, FaPhone } from "react-icons/fa6"
+import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa6"
 import image from "../images/freddy prof.png"
 import { FaLinkedinIn } from "react-icons/fa"
-import { MdEmail } from "react-icons/md"
 import { Link } from "react-router"
 import { filsContent } from "../contents/apiContent"
 import { useContext } from "react"
 
 const Footer = () => {
-  const { isChange, setIsChange } = useContext(filsContent)
+  const { isChange } = useContext(filsContent)
   return (
-    <div className=  "bg-gray-900 font-[sofia] py-10 text-white text-xl"   >
+    <div className={`font-[sofia] py-10 text-xl ${isChange ? "bg-slate-950 text-white" : "bg-white text-slate-900 border-t border-slate-200"}`}   >
 
       <div className="sm:w-[70%] sm:mx-auto   border-b-1  pb-10 ">
         <div className="flex justify-center">
@@ -29,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="sm:w-[70%] sm:mx-auto text-white text-center text-sm pt-4 ">
+      <div className={`sm:w-[70%] sm:mx-auto text-center text-sm pt-4 ${isChange ? "text-white" : "text-slate-700"}`}>
 
         <p>All right Reserved&copy; {new Date().getFullYear()}. freddy-b_porfolio </p>
       </div>

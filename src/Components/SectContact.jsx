@@ -1,6 +1,5 @@
 import chat from "../images/chat.svg"
-import { useContext, useRef, useState } from "react"
-import emailjs from "@emailjs/browser"
+import { useContext, useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { FaLocationDot, FaPhone, FaPaperPlane,  } from "react-icons/fa6"
@@ -10,7 +9,7 @@ import { filsContent } from "../contents/apiContent"
 
 
 const SectContact = () => {
-  const { isChange, setIsChange } = useContext(filsContent)
+  const { isChange } = useContext(filsContent)
 const [errors, setErrors] = useState({});
 const [isSubmitting, setIsSubmitting] = useState(false);
 const [formData, setFormData] = useState({
@@ -118,7 +117,7 @@ const handleSubmit = async (e) => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-4 sm:mb-6">
+          <div className={`inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-sm rounded-full shadow-lg mb-4 sm:mb-6 ${isChange ? "bg-white/80" : "bg-white border border-slate-200"}`}>
             <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
             <span className="text-sm sm:text-base text-gray-700 font-semibold">Get In Touch</span>
           </div>
@@ -131,7 +130,7 @@ const handleSubmit = async (e) => {
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg  max-w-2xl mx-auto leading-relaxed">
+          <p className={`text-base sm:text-lg max-w-2xl mx-auto leading-relaxed ${isChange ? "text-slate-300" : "text-slate-700"}`}>
             Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.
           </p>
         </motion.div>
@@ -144,7 +143,7 @@ const handleSubmit = async (e) => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className={` ${isChange? "bg-gray-900/80 " : "bg-gray-300"} backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-white/20 h-full`}>
+            <div className={` ${isChange? "bg-gray-900/80 text-white border-slate-500/70 shadow-slate-950/30" : "bg-white text-slate-900 border-slate-200"} backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border h-full`}>
               <div className="text-center mb-8">
                 <div className="relative inline-block">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-2xl"></div>
@@ -158,7 +157,7 @@ const handleSubmit = async (e) => {
                 </div>
               </div>
               <div className="space-y-6">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900- text-center mb-8">Let's Connect</h3>
+                <h3 className={`text-xl sm:text-2xl font-bold text-center mb-8 ${isChange ? "text-white" : "text-slate-900"}`}>Let's Connect</h3>
 
                 <div className="space-y-4">
                   <motion.div
@@ -169,8 +168,8 @@ const handleSubmit = async (e) => {
                       <FaLocationDot className="text-white text-lg" />
                     </div>
                     <div>
-                      <p className={`text-sm  ${isChange? "text-gray-500" : "text-gray-500"} font-medium`}>Location</p>
-                      <p className="text-gray-900 font-semibold">Kigali, Kimisagara</p>
+                      <p className={`text-sm ${isChange ? "text-slate-400" : "text-slate-500"} font-medium`}>Location</p>
+                      <p className={`${isChange ? "text-white" : "text-slate-900"} font-semibold`}>Kigali, Kimisagara</p>
                     </div>
                   </motion.div>
 
@@ -182,8 +181,8 @@ const handleSubmit = async (e) => {
                       <FaPhone className="text-white text-lg" />
                     </div>
                     <div>
-                      <p className={`text-sm  ${isChange? "text-gray-500" : "text-gray-500"} font-medium`}>Phone</p>
-                      <p className="text-gray-900 font-semibold">+250792404909</p>
+                      <p className={`text-sm ${isChange ? "text-slate-400" : "text-slate-500"} font-medium`}>Phone</p>
+                      <p className={`${isChange ? "text-white" : "text-slate-900"} font-semibold`}>+250792404909</p>
                     </div>
                   </motion.div>
 
@@ -195,8 +194,8 @@ const handleSubmit = async (e) => {
                       <MdEmail className="text-white text-lg" />
                     </div>
                     <div>
-                      <p className={`text-sm  ${isChange? "text-gray-500" : "text-gray-500"} font-medium`}>Email</p>
-                      <p className="text-gray-900 font-semibold">freddybijanja31@gmail.com</p>
+                      <p className={`text-sm ${isChange ? "text-slate-400" : "text-slate-500"} font-medium`}>Email</p>
+                      <p className={`${isChange ? "text-white" : "text-slate-900"} font-semibold`}>freddybijanja31@gmail.com</p>
                     </div>
                   </motion.div>
                 </div>
@@ -224,7 +223,7 @@ const handleSubmit = async (e) => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className= {`backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-white/20 ${isChange ? "bg-gray-900/80" :"bg-gray-300"}`}>
+            <div className= {`backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border ${isChange ? "bg-gray-900/80 border-slate-500/70 text-white shadow-slate-950/30" :"bg-white border-slate-200 text-slate-900"}`}>
               <h3 className="text-xl sm:text-2xl font-bold  mb-6">Send me a message</h3>
 
               <form  onSubmit={handleSubmit} className="space-y-6">
@@ -239,9 +238,9 @@ const handleSubmit = async (e) => {
                       if (errors.name) setErrors({...errors, name: ""});
                     }}
                     placeholder="Enter your full name"
-                    className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none  focus:shadow-lg ${
+                    className={`w-full p-4 border-2 rounded-xl outline-none  focus:shadow-lg ${
                       errors.name ? "border-red-500 focus:border-red-500" : " focus:border-purple-600"
-                    } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
+                    } ${isChange ? "bg-white/10 text-white border-gray-700 placeholder:text-slate-400" : "bg-slate-50 text-slate-900 border-slate-300 placeholder:text-slate-500"}`}
                   />
                   {errors.name && <p className="text-red-600 text-sm mt-2">{errors.name}</p>}
                 </div>
@@ -257,11 +256,11 @@ const handleSubmit = async (e) => {
                       if (errors.email) setErrors({...errors, email: ""});
                     }}
                     placeholder="Enter your email address"
-                    className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none   focus:shadow-lg ${
+                    className={`w-full p-4 border-2 rounded-xl outline-none   focus:shadow-lg ${
                       errors.email
                         ? "border-red-500 focus:border-red-500"
                         : " focus:border-purple-600"
-                    } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
+                    } ${isChange ? "bg-white/10 text-white border-gray-700 placeholder:text-slate-400" : "bg-slate-50 text-slate-900 border-slate-300 placeholder:text-slate-500"}`}
                   />
                   {errors.email && <p className="text-red-600 text-sm mt-2">{errors.email}</p>}
                 </div>
@@ -278,11 +277,11 @@ const handleSubmit = async (e) => {
                       if (errors.phone) setErrors({...errors, phone: ""});
                     }}
                     placeholder="Enter your email address"
-                    className={`w-full p-4 bg-white/50   border-2 rounded-xl outline-none   focus:shadow-lg ${
+                    className={`w-full p-4 border-2 rounded-xl outline-none   focus:shadow-lg ${
                       errors.phone
                         ? "border-red-500 focus:border-red-500"
                         : " focus:border-purple-600"
-                    } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
+                    } ${isChange ? "bg-white/10 text-white border-gray-700 placeholder:text-slate-400" : "bg-slate-50 text-slate-900 border-slate-300 placeholder:text-slate-500"}`}
                   />
                   {errors.phone && <p className="text-red-600 text-sm mt-2">{errors.phone}</p>}
                 </div>
@@ -298,9 +297,9 @@ const handleSubmit = async (e) => {
                     }}
                     placeholder="Tell me about your project..."
                     rows="6"
-                    className={`w-full p-4 bg-white/50 text-black border-2 rounded-xl outline-none transition-all duration-300 focus:bg-white focus:shadow-lg resize-none ${
+                    className={`w-full p-4 border-2 rounded-xl outline-none transition-all duration-300 focus:shadow-lg resize-none ${
                       errors.message ? "border-red-500 focus:border-red-500" : " focus:border-purple-600"
-                    } ${isChange ? "border-gray-200" : "bg-gray-900"}`}
+                    } ${isChange ? "bg-white/10 text-white border-gray-700 placeholder:text-slate-400 focus:bg-white/15" : "bg-slate-50 text-slate-900 border-slate-300 placeholder:text-slate-500 focus:bg-white"}`}
                   ></textarea>
                   {errors.message && <p className="text-red-600 text-sm mt-2">{errors.message}</p>}
                 </div>

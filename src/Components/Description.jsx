@@ -1,12 +1,14 @@
 
-
+import { useContext } from "react";
 import { Link } from "react-router";
 import Image from "../images/freddy.jpeg";
 import { motion } from "framer-motion";
+import { filsContent } from "../contents/apiContent";
 
 const Pdf_FILE = 'https://localhost:5173/CV_Frederick_BIJANJA_2025.pdf';
 
 const Description = () => {
+  const { isChange } = useContext(filsContent);
   const downloadFileAtURL = (url) => {
     const fileName = url.split('/').pop();
     const aTag = document.createElement('a');
@@ -28,7 +30,7 @@ const Description = () => {
         >
           <div className="relative">
             <div className="absolute inset-0 bg-purple-600 rounded-2xl transform rotate-3"></div>
-            <div className="relative bg-white p-2 rounded-2xl shadow-2xl">
+            <div className={`relative p-2 rounded-2xl shadow-2xl ${isChange ? "bg-white" : "bg-slate-200"}`}>
               <img
                 src={Image}
                 alt="Freddy BIJANJA - Full Stack Developer"
@@ -66,12 +68,12 @@ const Description = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <p className="text-lg leading-relaxed">
+            <p className={`text-lg leading-relaxed ${isChange ? "text-slate-300" : "text-slate-700"}`}>
               Hello, I&apos;m <span className="font-semibold text-purple-600">Freddy BIJANJA</span>, a passionate full-stack
               developer dedicated to crafting exceptional digital experiences. I specialize in building modern, scalable
               web applications using cutting-edge technologies.
             </p>
-            <p className="text-lg leading-relaxed">
+            <p className={`text-lg leading-relaxed ${isChange ? "text-slate-300" : "text-slate-700"}`}>
               With a strong foundation in both frontend and backend development, I transform ideas into robust,
               user-friendly solutions that drive business growth and deliver outstanding user experiences.
             </p>
@@ -84,7 +86,7 @@ const Description = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             {["React", "Next.js", "Node.js", "TypeScript", "MongoDB"].map((tech) => (
-              <span key={tech} className="px-3 py-1 bg-gray-500 text-white text-sm font-medium rounded-lg">
+              <span key={tech} className={`px-3 py-1 text-sm font-medium rounded-lg ${isChange ? "bg-slate-800 text-slate-100" : "bg-white text-slate-800 border border-slate-200"}`}>
                 {tech}
               </span>
             ))}
@@ -102,7 +104,7 @@ const Description = () => {
               </button>
             </Link>
 
-            <button className="px-8 py-3 border-2 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200"
+            <button className={`px-8 py-3 border-2 font-semibold rounded-lg transition-all duration-200 ${isChange ? "bg-slate-800 border-slate-700 text-white hover:bg-slate-700" : "bg-white border-slate-300 text-slate-900 hover:bg-slate-900 hover:text-white"}`}
             onClick={() => {downloadFileAtURL(Pdf_FILE)}}
             >
               Download CV
@@ -118,14 +120,14 @@ const Description = () => {
         transition={{ duration: 0.8, delay: 1.2 }}
       >
         {[
-          { number: "20+", label: "Projects Completed" },
+          { number: "7+", label: "Projects Completed" },
           { number: "2+", label: "Years Experience" },
-          { number: "10+", label: "Happy Clients" },
+          { number: "3+", label: "Happy Clients" },
           { number: "24/7", label: "Support Available" },
         ].map((stat, index) => (
           <div key={index} className="text-center">
             <div className="text-3xl lg:text-4xl font-bold text-purple-600 mb-2">{stat.number}</div>
-            <div className="text-gray-500 text-sm lg:text-base">{stat.label}</div>
+            <div className={`${isChange ? "text-slate-400" : "text-slate-600"} text-sm lg:text-base`}>{stat.label}</div>
           </div>
         ))}
       </motion.div>

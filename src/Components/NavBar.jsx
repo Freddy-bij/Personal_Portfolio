@@ -50,11 +50,11 @@ const NavBar = () => {
 
   return (
     <div
-      className={`font-[sofia] sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "pt-0 w-full bg-gray-900/95  backdrop-blur-md shadow-2xl" : "  pt-6 w-full"
+      className={`font-[sofia] sticky top-0 z-50 transition-all duration-300 ${isScrolled ? `pt-0 w-full ${isChange ? "bg-slate-950/90" : "bg-white/90"} backdrop-blur-md` : "  pt-6 w-full"
         }  `}
     >
       <nav
-        className={`flex justify-between  backdrop-blur-md  items-center py-2 px-1 rounded-[30px]  transition-all duration-300 ${isScrolled ? "sm:w-[70%] sm:mx-auto mx-4 my-2  " : "sm:w-[70%] sm:mx-auto mx-4  bg-gray-900/95 shadow-2xl"
+        className={`flex justify-between  backdrop-blur-md  items-center py-2 px-1 rounded-[30px]  transition-all duration-300 ${isScrolled ? "sm:w-[70%] sm:mx-auto mx-4 my-2  " : `sm:w-[70%] sm:mx-auto mx-4 ${isChange ? "bg-slate-950/90" : "bg-white/90 "}`
           }}`}
       >
         <div className="flex items-center">
@@ -66,14 +66,14 @@ const NavBar = () => {
             />
           </div>
           <Link to="/">
-            <h1 className="text-xl font-semibold text-white">
+            <h1 className={`text-xl font-semibold ${isChange ? "text-white" : "text-slate-900"}`}>
               Freddy-<span className="text-2xl font-bold text-purple-600">B</span>
             </h1>
           </Link>
         </div>
 
         <div className="relative">
-          <div className="flex items-center gap-x-2 text-white">
+          <div className={`flex items-center gap-x-2 ${isChange ? "text-white" : "text-slate-900"}`}>
             <div className=" font-bold hidden md:flex md:items-center md:gap-3">
               
                 <button className="hover:text-purple-600 px-2 py-1 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-purple-600 active:text-purple-600 transition-all duration-300 hover:scale-105">
@@ -110,7 +110,7 @@ const NavBar = () => {
             </div>
 
             <div
-              className={`${isChange ? "bg-black " : "bg-white text-black"} w-8 h-8 flex items-center justify-center rounded-full text-2xl cursor-pointer transition-all duration-500 hover:scale-110 active:scale-95`}
+              className={`${isChange ? "bg-white text-slate-900" : "bg-slate-900 text-white"} w-8 h-8 flex items-center justify-center rounded-full text-2xl cursor-pointer transition-all duration-500 hover:scale-110 active:scale-95 shadow-md`}
               onClick={() => setIsChange((prevIsChange) => !prevIsChange)}
             >
               <div className="transition-transform duration-500 ease-in-out">
@@ -118,7 +118,7 @@ const NavBar = () => {
               </div>
             </div>
 
-            <div className={`flex items-center   rounded-2xl gap-x-2 relative md:hidden overflow-hidden ${isChange ? "bg-black" : "bg-gray-200"}`}>
+            <div className={`flex items-center   rounded-2xl gap-x-2 relative md:hidden overflow-hidden ${isChange ? "bg-slate-900" : "bg-slate-200 text-slate-900"}`}>
               <h1 className="pl-2 font-semibold transition-all duration-300">Menu</h1>
               <div
                 className="w-8 h-8 bg-purple-600 flex justify-center items-center rounded-full font-semibold  text-2xl cursor-pointer transition-all duration-300 hover:bg-[#ff2f24] active:scale-95"
@@ -143,12 +143,12 @@ const NavBar = () => {
               }
           `}
           >
-            <div className="bg-gray-900/95 text-white backdrop-blur-md rounded-xl p-4 shadow-2xl border border-gray-700/50" >
+            <div className={`${isChange ? "bg-slate-950/95 text-white border-slate-700/50" : "bg-white/95 text-slate-900 border-slate-200"} backdrop-blur-md rounded-xl p-4 shadow-2xl border`} >
               <ul className=" font-bold space-y-3">
                 <li className="transform transition-all duration-300 hover:translate-x-2">
                   <a
                     href="/"
-                    className="block hover:text-purple-600 py-2 px-3 rounded-lg hover:bg-gray-800/50 transition-all duration-300"
+                    className={`block hover:text-purple-600 py-2 px-3 rounded-lg transition-all duration-300 ${isChange ? "hover:bg-slate-800/50" : "hover:bg-slate-100"}`}
                     onClick={() => setIsClicked(true)}
                   >
                     Home
@@ -157,21 +157,21 @@ const NavBar = () => {
                 <li className="transform transition-all duration-300 hover:translate-x-2">
                   <a
                     href="#about"
-                    className="block hover:text-purple-600 py-2 px-3 rounded-lg hover:bg-gray-800/50 transition-all duration-300"
+                    className={`block hover:text-purple-600 py-2 px-3 rounded-lg transition-all duration-300 ${isChange ? "hover:bg-slate-800/50" : "hover:bg-slate-100"}`}
                     onClick={() => setIsClicked(true)}
                   >
                     About Me
                   </a>
                 </li>
                 <li className="transform transition-all duration-300 hover:translate-x-2">
-                  <a href="#skills" className="block w-full text-left hover:text-purple-600 py-2 px-3 rounded-lg hover:bg-gray-800/50 transition-all duration-300">
+                  <a href="#skills" className={`block w-full text-left hover:text-purple-600 py-2 px-3 rounded-lg transition-all duration-300 ${isChange ? "hover:bg-slate-800/50" : "hover:bg-slate-100"}`}>
                     Skills
                   </a>
                 </li>
                 <li className="transform transition-all duration-300 hover:translate-x-2">
                   <a
                     href="#contact"
-                    className="block hover:text-purple-800 py-2 px-3 rounded-lg hover:bg-gray-800/50 transition-all duration-300"
+                    className={`block hover:text-purple-600 py-2 px-3 rounded-lg transition-all duration-300 ${isChange ? "hover:bg-slate-800/50" : "hover:bg-slate-100"}`}
                     onClick={() => setIsClicked(true)}
                   >
                     Contact Me
@@ -181,7 +181,7 @@ const NavBar = () => {
                  <li className="transform transition-all duration-300 hover:translate-x-2">
                   <a
                     href="#projects"
-                    className="block hover:text-purple-800 py-2 px-3 rounded-lg hover:bg-gray-800/50 transition-all duration-300"
+                    className={`block hover:text-purple-600 py-2 px-3 rounded-lg transition-all duration-300 ${isChange ? "hover:bg-slate-800/50" : "hover:bg-slate-100"}`}
                     onClick={() => setIsClicked(true)}
                   >
                     Projects

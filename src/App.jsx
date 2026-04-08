@@ -8,12 +8,12 @@ import Layout from './Components/Layout'
 
 
 const App = () => {
-  const [isChange, setIsChange] = useState(true)
+  const [isChange, setIsChange] = useState(false)
   const [isClicked, setIsClicked] = useState(true)
   return (
     <>
       <filsContent.Provider value={{ isChange, setIsChange, isClicked, setIsClicked }}>
-        <div className={isChange ? "bg-gray-800 text-white" : "bg-gray-200 text-black"}>
+        <div className={isChange ? "min-h-screen bg-slate-950 text-slate-50" : "min-h-screen bg-slate-100 text-slate-900"}>
 
           <BrowserRouter>
             <Routes>

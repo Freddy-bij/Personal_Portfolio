@@ -7,12 +7,16 @@ import {
   FaCode,
   FaLaptopCode,
   FaRocket,
+  FaStar,
+  FaHeadset,
+  FaBullseye,
 } from "react-icons/fa6"
 import { motion } from "framer-motion"
 import Education from "./Education"
 import { Link } from "react-router"
 import { useContext } from "react"
 import { filsContent } from "../contents/apiContent"
+import { RiRocket2Fill } from "react-icons/ri"
 
 
 const Pdf_FILE = 'http://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
@@ -149,11 +153,6 @@ const downloadFileAtURL = (url) => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="relative">
-            <div className="relative z-10">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-600/20 rounded-full opacity-20 animate-pulse"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-600/30 rounded-full opacity-30"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border-2 border-purple-600/20 rounded-full"></div>
-            </div>
               <div className="relative z-10 bg-white/80- backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/20">
                 <div className="relative overflow-hidden rounded-2xl">
                   <img
@@ -174,10 +173,10 @@ const downloadFileAtURL = (url) => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { number: "20+", label: "Projects", icon: "🚀", color: "from-purple-600 to-purple-600" },
-                { number: "100%", label: "Satisfaction", icon: "⭐", color: "from-purple-600 to-purple-600" },
-                { number: "24/7", label: "Support", icon: "💬", color: "from-purple-600 to-purple-600" },
-                { number: "2+", label: "Years Exp", icon: "🎯", color: "from-purple-600 to-purple-600" },
+                { number: "7+", label: "Projects", icon: <RiRocket2Fill />, color: "from-purple-600 to-purple-600" },
+                { number: "100%", label: "Satisfaction", icon: <FaStar />, color: "from-purple-600 to-purple-600" },
+                { number: "24/7", label: "Support", icon: <FaHeadset />, color: "from-purple-600 to-purple-600" },
+                { number: "2+", label: "Years Exp", icon: <FaBullseye />, color: "from-purple-600 to-purple-600" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
