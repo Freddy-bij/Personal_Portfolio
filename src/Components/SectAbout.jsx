@@ -56,7 +56,7 @@ const downloadFileAtURL = (url) => {
             </span>
           </h2>
         </motion.div>
-
+            {/* font-semibold text-purple-600 */}
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           
           <motion.div
@@ -68,19 +68,14 @@ const downloadFileAtURL = (url) => {
             <div className={` ${isChange? "bg-white/70" :"bg-gray-200"} backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20`}>
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed">
-                  I'm a passionate full-stack developer who bridges the gap between{" "}
-                  <span className="font-semibold text-purple-600">business strategy</span> and{" "}
-                  <span className="font-semibold text-purple-600">technical excellence</span>. With my background in
-                  Business Management and Computer Science, I don't just build applications—I craft solutions that drive
-                  growth.
+                 I'm a full-stack developer who bridges business strategy and technical excellence. With backgrounds in both Commercial Management and intensive software engineering, I don't just build applications – I craft solutions that drive real growth.
                 </p>
 
                 <p className="text-lg  leading-relaxed">
-                  My expertise spans the entire development stack, from creating intuitive user interfaces with{" "}
-                  <span className="font-semibold text-gray-900">React.js</span> and{" "}
-                  <span className="font-semibold text-gray-900">Tailwind CSS</span> to building robust backends with{" "}
-                  <span className="font-semibold text-gray-900">Node.js</span>. I bring ideas to life with smooth
-                  animations using <span className="font-semibold text-gray-900">Framer Motion</span>.
+                  My expertise spans the entire stack: intuitive interfaces with{" "}
+                  <span className="font-semibold text-gray-900">React.js , Typescript </span> and{" "}
+                  <span className="font-semibold text-gray-900">Tailwind CSS</span> robust backends with{" "}
+                  <span className="font-semibold text-gray-900">Node.js</span>.and smooth animations using <span className="font-semibold text-gray-900">Framer Motion</span>. I bring ideas to life, from first commit to deployed product.
                 </p>
                 <div className="grid sm:grid-cols-3 gap-4 pt-4">
                   {[

@@ -69,14 +69,9 @@ const Description = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p className={`text-lg leading-relaxed ${isChange ? "text-slate-300" : "text-slate-700"}`}>
-              Hello, I&apos;m <span className="font-semibold text-purple-600">Freddy BIJANJA</span>, a passionate full-stack
-              developer dedicated to crafting exceptional digital experiences. I specialize in building modern, scalable
-              web applications using cutting-edge technologies.
+              Hello, I&apos;m <span className="font-semibold text-purple-600">Freddy BIJANJA</span>, a full-stack developer who builds modern, scalable web applications that actually ship. I turn ideas into user-friendly solutions, from database to UI.
             </p>
-            <p className={`text-lg leading-relaxed ${isChange ? "text-slate-300" : "text-slate-700"}`}>
-              With a strong foundation in both frontend and backend development, I transform ideas into robust,
-              user-friendly solutions that drive business growth and deliver outstanding user experiences.
-            </p>
+           
           </motion.div>
 
           <motion.div
