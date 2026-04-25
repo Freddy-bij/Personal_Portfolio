@@ -19,7 +19,7 @@ import { filsContent } from "../contents/apiContent"
 import { RiRocket2Fill } from "react-icons/ri"
 
 
-const Pdf_FILE = 'http://localhost:5173/CV_Frederick_BIJANJA_2025.pdf'
+const Pdf_FILE = '/Frederick_Bijanja_CV_2026.pdf'
 
 
 const SectAbout = () => {
