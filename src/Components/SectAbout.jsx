@@ -12,7 +12,6 @@ import {
   FaBullseye,
 } from "react-icons/fa6"
 import { motion } from "framer-motion"
-import Education from "./Education"
 import { Link } from "react-router"
 import { useContext } from "react"
 import { filsContent } from "../contents/apiContent"
@@ -139,7 +138,7 @@ const downloadFileAtURL = (url) => {
               </Link>
              
             </motion.div>
-             <Education/>
+             
           </motion.div>
           <motion.div
             className="lg:col-span-5 space-y-6"
@@ -166,45 +165,6 @@ const downloadFileAtURL = (url) => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { number: "7+", label: "Projects", icon: <RiRocket2Fill />, color: "from-purple-600 to-purple-600" },
-                { number: "100%", label: "Satisfaction", icon: <FaStar />, color: "from-purple-600 to-purple-600" },
-                { number: "24/7", label: "Support", icon: <FaHeadset />, color: "from-purple-600 to-purple-600" },
-                { number: "2+", label: "Years Exp", icon: <FaBullseye />, color: "from-purple-600 to-purple-600" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className={`bg-gradient-to-br ${stat.color} text-white p-6 rounded-2xl text-center shadow-lg`}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="text-2xl mb-2">{stat.icon}</div>
-                  <div className="text-2xl font-bold mb-1">{stat.number}</div>
-                  <div className="text-sm opacity-90">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div
-              className= {` ${isChange? "bg-white/70" : "bg-gray-300"} backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-            >
-              <h3 className="font-semibold text-purple-600 mb-4">Tech Stack</h3>
-              <div className="flex flex-wrap gap-2">
-                {["React", "Node.js", "TypeScript", "Tailwind", "MongoDB", "Framer Motion"].map((tech, index) => (
-                  <span
-                    key={tech}
-                    className={`px-3 py-1  ${isChange ? "bg-gray-900/80 text-white" : "bg-gray-500/10 text-gray-900"} text-sm font-medium rounded-lg hover:bg-purple-600 hover:text-white transition-all cursor-default`}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

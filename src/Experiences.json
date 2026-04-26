@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "date": "2024-2025",
+    "title": "Intensive Training",
+    "name": "Alight Rwanda",
+    "program": "Software Development Training",
+    "location": "Gatsibo",
+    "description": "Completed an intensive software development training program focused on web technologies and best practices.",
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Responsive Design", "Web Development"],
+    "certificate": {
+      "name": "Certificate of Completion",
+      "image": "/images/alight-cert.png",
+      "status": "Completed",
+      "verified": true
+    }
+  },
+  {
+    "id": "2",
+    "date": "2025-2026",
+    "title": "Intensive Training",
+    "name": "Klab Academic",
+    "program": "Advanced Concepts & Modern Technologies",
+    "location": "Kigali",
+    "description": "Advanced training covering modern web development frameworks, backend technologies, and emerging AI fundamentals.",
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Next.js", "AI Fundamentals", "Full Stack Development"],
+    "certificate": {
+      "name": "Advanced Concepts Certificate",
+      "image": "/images/klab-cert.png",
+      "status": "Completed",
+      "verified": true
+    }
+  }
+]

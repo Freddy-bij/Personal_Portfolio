@@ -6,6 +6,7 @@ import SectContact from './SectContact'
 import SectSkills from './SectSkills'
 import { useEffect } from 'react';
 import ProjectsSect from './ProjectsSect';
+import SectExperience from './SectExperience';
 
 
 const PrensentationSec = () => {
@@ -30,6 +31,7 @@ const PrensentationSec = () => {
     <div >
       <SectAbout/>
       <ProjectsSect/>
+      <SectExperience/>
       <SectSkills/>
       <SectContact/>
     </div>

@@ -85,13 +85,21 @@ const NavBar = () => {
                  About Me
               </a>
               <button
-              
+               
                 className="hover:text-purple-600 px-2 py-1 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-purple-600 active:text-purple-600 transition-all duration-300 hover:scale-105"
               >
                 <a href="#skills">
                   Skills
                 </a>
                 
+              </button>
+              <button
+               
+                className="hover:text-purple-600 px-2 py-1 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-purple-600 active:text-purple-600 transition-all duration-300 hover:scale-105"
+              >
+                <a href="#experience">
+                  Experience
+                </a>
               </button>
               <a href="#contact">
                 <button className="hover:text-purple-600 px-2 py-1 focus:outline-2 rounded-md focus:outline-offset-2 focus:outline-purple-600 active:text-purple-600 transition-all duration-300 hover:scale-105">
@@ -166,6 +174,11 @@ const NavBar = () => {
                 <li className="transform transition-all duration-300 hover:translate-x-2">
                   <a href="#skills" className={`block w-full text-left hover:text-purple-600 py-2 px-3 rounded-lg transition-all duration-300 ${isChange ? "hover:bg-slate-800/50" : "hover:bg-slate-100"}`}>
                     Skills
+                  </a>
+                </li>
+                <li className="transform transition-all duration-300 hover:translate-x-2">
+                  <a href="#experience" className={`block w-full text-left hover:text-purple-600 py-2 px-3 rounded-lg transition-all duration-300 ${isChange ? "hover:bg-slate-800/50" : "hover:bg-slate-100"}`} onClick={() => setIsClicked(true)}>
+                    Experience
                   </a>
                 </li>
                 <li className="transform transition-all duration-300 hover:translate-x-2">
