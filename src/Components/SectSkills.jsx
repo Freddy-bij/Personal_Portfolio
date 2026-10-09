@@ -47,7 +47,7 @@ const SectSkills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center text-gray-900 gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-4 sm:mb-6">
+          <div className="inline-flex items-center text-gray-900 gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/80 backdrop-blur-sm rounded-full mb-4 sm:mb-6">
             <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
             <span className="text-sm sm:text-base  font-semibold">Technical Expertise</span>
           </div>
@@ -73,10 +73,10 @@ const SectSkills = () => {
               className="group relative"
             >
            
-              <div className="relative bg-linear-to-r from-purple-600/10 via-purple-600/10 to-purple-600/10 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="relative bg-linear-to-r from-purple-600/10 via-purple-600/10 to-purple-600/10 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 ">
 
                 <div
-                  className={`absolute -top-2 -right-2 px-2 py-1 bg-linear-to-r ${categoryColors[skill.category]} text-white text-xs font-semibold rounded-full shadow-lg`}
+                  className={`absolute -top-2 -right-2 px-2 py-1 bg-linear-to-r ${categoryColors[skill.category]} text-white text-xs font-semibold rounded-full `}
                 >
                   {skill.category}
                 </div>
@@ -165,7 +165,7 @@ const SectSkills = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <p className="text-base sm:text-lg mb-6">Ready to bring these skills to your next project?</p>
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-purple-600 text-white font-semibold rounded-2xl ">
             <a href="#contact"> Let&apos;s Work Together</a>
           </button>
         </motion.div>

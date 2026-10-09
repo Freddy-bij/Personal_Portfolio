@@ -5,8 +5,9 @@ import klab from "../images/klab.png"
 import { FaGithub, FaLink } from "react-icons/fa6"
 
 
-import { useState } from "react"
+import { useContext, useState } from "react"
 import WorldProject from "./WorldProject"
+import { filsContent } from "../contents/apiContent"
 
 
 const Projects=[
@@ -60,6 +61,7 @@ const Projects=[
 ]
 
 const ProjectsSect = () => {
+  const { isChange } = useContext(filsContent)
       const [isHovered, setIsHovered] = useState(false);
   return (
     <div id="projects" className="max-w-7xl mx-auto px-6 ">
@@ -69,10 +71,10 @@ const ProjectsSect = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-6">
-          <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
-          <span className="text-purple-600  font-semibold">Projects</span>
-        </div>
+         <div className={`inline-flex items-center ${isChange ? "text-white" : "text-gray-900"} gap-2 px-4 sm:px-6 py-2 sm:py-3 ${isChange ? "bg-slate-800/80" : "bg-white/80"} backdrop-blur-sm rounded-full  mb-4 sm:mb-6`}>
+            <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
+            <span className="text-sm sm:text-base font-semibold">Projects</span>
+          </div>
         <h2 className="text-4xl lg:text-5xl font-bold text-purple-600  mb-4">
           Projects I&apos;ve
           <span className="block text-purple-600 ">
@@ -87,7 +89,7 @@ const ProjectsSect = () => {
         Projects.map((project) => (
               <div
                 key={project.id}
-                className="relative rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden backdrop-blur-sm mb-4"
+                className="relative rounded-2xl transition-all duration-300 overflow-hidden backdrop-blur-sm mb-4"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
@@ -106,7 +108,7 @@ const ProjectsSect = () => {
                     
                     <div
                       className={`
-                        relative rounded-xl overflow-hidden shadow-2xl border border-white/30
+                        relative rounded-xl overflow-hidden  border border-white/30
                         transition-transform duration-500 
                         ${isHovered ? "scale-105 rotate-1" : "scale-100"}
                       `}

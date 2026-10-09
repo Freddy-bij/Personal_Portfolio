@@ -18,7 +18,7 @@ import { filsContent } from "../contents/apiContent"
 import { RiRocket2Fill } from "react-icons/ri"
 
 
-const Pdf_FILE = '/Frederick_Bijanja_CV_2026.pdf'
+const Pdf_FILE = '/Frederick_Bijanja_CV_Updated.pdf'
 
 
 const SectAbout = () => {
@@ -35,7 +35,7 @@ const downloadFileAtURL = (url) => {
 };
 
   return (
-    <div id="about" className="min-h-screen py-16 lg:py-24">
+    <div id="about" className="min-h-screen pb-24">
       <div className="max-w-7xl mx-auto px-6">
       
         <motion.div
@@ -44,9 +44,9 @@ const downloadFileAtURL = (url) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-6">
+          <div className={`inline-flex items-center ${isChange ? "text-white" : "text-gray-900"} gap-2 px-4 sm:px-6 py-2 sm:py-3 ${isChange ? "bg-slate-800/80" : "bg-white/80"} backdrop-blur-sm rounded-full  mb-4 sm:mb-6`}>
             <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
-            <span className="text-purple-600  font-semibold">About Me</span>
+            <span className="text-sm sm:text-base font-semibold">About Me</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-purple-600  mb-4">
             Building Tomorrow's
@@ -64,7 +64,7 @@ const downloadFileAtURL = (url) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className={` ${isChange? "bg-white/70" :"bg-gray-200"} backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20`}>
+            <div className={` ${isChange? "bg-white/70" :"bg-gray-200"} backdrop-blur-sm rounded-3xl p-8  border border-white/20`}>
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed">
                  I'm a full-stack developer who bridges business strategy and technical excellence. With backgrounds in both Commercial Management and intensive software engineering, I don't just build applications – I craft solutions that drive real growth.
@@ -102,9 +102,9 @@ const downloadFileAtURL = (url) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <button className="group px-8 py-4 bg-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+              <button className="group px-8 py-4 bg-purple-600 text-white font-semibold rounded-2xl  flex items-center justify-center gap-3">
                 <span><a href="#contact">Let's Work Together</a></span>
-                <FaArrowUpRightFromSquare className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <FaArrowUpRightFromSquare className="w-4 h-4 " />
               </button>
 
               <button className={`px-8 py-4  ${isChange? "bg-white/70" : "bg-gray-300"}  text-gray-700 font-semibold rounded-2xl flex items-center justify-center gap-3 border border-gray-200`}
@@ -126,10 +126,10 @@ const downloadFileAtURL = (url) => {
                 rel="noopener noreferrer"
                 className={`p-4 ${isChange? "bg-white/70" : "bg-gray-200"} backdrop-blur-sm text-gray-900 rounded-2xl hover:bg-gray-900 hover:text-white transition-all duration-300 group border border-gray-200`}
               >
-                <FaGithub className="whreh-5 group-hover:scale-110 transition-transform" />
+                <FaGithub className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </Link>
               <Link
-                to="https://www.linkedin.com/in/freddy-bijanja-054b3031a/"
+                to="https://www.linkedin.com/in/frederick-bijanja-3219a1414/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-4 ${isChange? "bg-white/70 " : "bg-gray-200"} backdrop-blur-sm text-gray-900 rounded-2xl hover:bg-purple-600 hover:text-white transition-all duration-300 group border border-gray-200`}
@@ -147,7 +147,7 @@ const downloadFileAtURL = (url) => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="relative">
-              <div className="relative z-10 bg-white/80- backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/20">
+              <div className="relative z-10 ">
                 <div className="relative overflow-hidden rounded-2xl">
                   <img
                     src={freddy}

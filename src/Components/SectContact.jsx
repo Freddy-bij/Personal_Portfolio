@@ -117,9 +117,9 @@ const handleSubmit = async (e) => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className={`inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-sm rounded-full shadow-lg mb-4 sm:mb-6 ${isChange ? "bg-white/80" : "bg-white border border-slate-200"}`}>
+           <div className={`inline-flex items-center ${isChange ? "text-white" : "text-gray-900"} gap-2 px-4 sm:px-6 py-2 sm:py-3 ${isChange ? "bg-slate-800/80" : "bg-white/80"} backdrop-blur-sm rounded-full  mb-4 sm:mb-6`}>
             <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
-            <span className="text-sm sm:text-base text-gray-700 font-semibold">Get In Touch</span>
+            <span className="text-sm sm:text-base font-semibold">Contact Me</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-purple-600 mb-4 sm:mb-6">
@@ -143,11 +143,11 @@ const handleSubmit = async (e) => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className={` ${isChange? "bg-gray-900/80 text-white border-slate-500/70 shadow-slate-950/30" : "bg-white text-slate-900 border-slate-200"} backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border h-full`}>
+            <div className={` ${isChange? "bg-gray-900/80 text-white border-slate-500/70 shadow-slate-950/30" : "bg-white text-slate-900 border-slate-200"} backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10  border h-full`}>
               <div className="text-center mb-8">
                 <div className="relative inline-block">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-2xl"></div>
-                <div className={`relative  p-6 rounded-3xl shadow-lg`}>
+                <div className={`relative  p-6 rounded-3xl `}>
                     <img
                       src={chat || "/placeholder.svg?height=200&width=200"}
                       alt="Chat Icon"
@@ -161,7 +161,7 @@ const handleSubmit = async (e) => {
 
                 <div className="space-y-4">
                   <motion.div
-                    className="flex items-center gap-4 p-4 bg-purple-600/10 rounded-xl hover:shadow-md transition-all duration-300"
+                    className="flex items-center gap-4 p-4 bg-purple-600/10 rounded-xl  transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
@@ -174,7 +174,7 @@ const handleSubmit = async (e) => {
                   </motion.div>
 
                   <motion.div
-                    className="flex items-center gap-4 p-4 bg-purple-600/10 rounded-xl hover:shadow-md transition-all duration-300"
+                    className="flex items-center gap-4 p-4 bg-purple-600/10 rounded-xl transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
@@ -187,7 +187,7 @@ const handleSubmit = async (e) => {
                   </motion.div>
 
                   <motion.div
-                    className="flex items-center gap-4 p-4 bg-purple-600/10 rounded-xl hover:shadow-md transition-all duration-300"
+                    className="flex items-center gap-4 p-4 bg-purple-600/10 rounded-xl  "
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
@@ -223,7 +223,7 @@ const handleSubmit = async (e) => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className= {`backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border ${isChange ? "bg-gray-900/80 border-slate-500/70 text-white shadow-slate-950/30" :"bg-white border-slate-200 text-slate-900"}`}>
+            <div className= {`backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border ${isChange ? "bg-gray-900/80 border-slate-500/70 text-white shadow-slate-950/30" :"bg-white border-slate-200 text-slate-900"}`}>
               <h3 className="text-xl sm:text-2xl font-bold  mb-6">Send me a message</h3>
 
               <form  onSubmit={handleSubmit} className="space-y-6">
@@ -238,7 +238,7 @@ const handleSubmit = async (e) => {
                       if (errors.name) setErrors({...errors, name: ""});
                     }}
                     placeholder="Enter your full name"
-                    className={`w-full p-4 border-2 rounded-xl outline-none  focus:shadow-lg ${
+                    className={`w-full p-4 border-2 rounded-xl outline-none   ${
                       errors.name ? "border-red-500 focus:border-red-500" : " focus:border-purple-600"
                     } ${isChange ? "bg-white/10 text-white border-gray-700 placeholder:text-slate-400" : "bg-slate-50 text-slate-900 border-slate-300 placeholder:text-slate-500"}`}
                   />
@@ -256,7 +256,7 @@ const handleSubmit = async (e) => {
                       if (errors.email) setErrors({...errors, email: ""});
                     }}
                     placeholder="Enter your email address"
-                    className={`w-full p-4 border-2 rounded-xl outline-none   focus:shadow-lg ${
+                    className={`w-full p-4 border-2 rounded-xl outline-none    ${
                       errors.email
                         ? "border-red-500 focus:border-red-500"
                         : " focus:border-purple-600"

@@ -8,9 +8,9 @@ import { useContext } from "react"
 const Footer = () => {
   const { isChange } = useContext(filsContent)
   return (
-    <div className={`font-[sofia] py-10 text-xl ${isChange ? "bg-slate-950 text-white" : "bg-white text-slate-900 border-t border-slate-200"}`}   >
+    <div className={`font-[sofia] py-10 text-xl ${isChange ? "bg-slate-950 text-white border-t border-t-white/20" : "bg-white text-slate-900 border-t border-slate-200"}`}   >
 
-      <div className="sm:w-[70%] sm:mx-auto   border-b-1  pb-10 ">
+      <div className="sm:w-[70%] sm:mx-auto   border-b-1 border-b-white/20 pb-10 ">
         <div className="flex justify-center">
           <div >
             <div className="flex items-center" >
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={`sm:w-[70%] sm:mx-auto text-center text-sm pt-4 ${isChange ? "text-white" : "text-slate-700"}`}>
+      <div className={`sm:w-[70%] sm:mx-auto text-center text-xs pt-4 ${isChange ? "text-white" : "text-slate-700"}`}>
 
         <p>All right Reserved&copy; {new Date().getFullYear()}. freddy-b_porfolio </p>
       </div>

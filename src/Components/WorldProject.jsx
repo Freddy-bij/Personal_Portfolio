@@ -37,7 +37,7 @@ const WorldProject = () => {
       {Projects.map((project) => (
         <div
           key={project.id}
-          className="relative rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden backdrop-blur-sm"
+          className="relative rounded-2xl transition-all duration-300 overflow-hidden backdrop-blur-sm"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -89,7 +89,7 @@ const WorldProject = () => {
                     rel="noopener noreferrer"
                     className={`
                       flex items-center gap-2 px-6 py-3 rounded-lg font-medium
-                      transition-all duration-300 transform hover:scale-105 shadow-lg
+                      transition-all duration-300 transform hover:scale-105 
                       ${
                         link.type === "github"
                           ? "bg-gray-900 text-white hover:bg-gray-900/80"
@@ -115,7 +115,7 @@ const WorldProject = () => {
               
               <div
                 className={`
-                  relative rounded-xl overflow-hidden shadow-2xl border border-white/30
+                  relative rounded-xl overflow-hidden  border border-white/30
                   transition-transform duration-500
                   ${isHovered ? "scale-105 rotate-1" : "scale-100"}
                 `}

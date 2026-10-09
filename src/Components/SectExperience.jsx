@@ -30,7 +30,7 @@ const SectExperience = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className={`inline-flex items-center ${isChange ? "text-white" : "text-gray-900"} gap-2 px-4 sm:px-6 py-2 sm:py-3 ${isChange ? "bg-slate-800/80" : "bg-white/80"} backdrop-blur-sm rounded-full shadow-lg mb-4 sm:mb-6`}>
+          <div className={`inline-flex items-center ${isChange ? "text-white" : "text-gray-900"} gap-2 px-4 sm:px-6 py-2 sm:py-3 ${isChange ? "bg-slate-800/80" : "bg-white/80"} backdrop-blur-sm rounded-full  mb-4 sm:mb-6`}>
             <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
             <span className="text-sm sm:text-base font-semibold">Professional Journey</span>
           </div>
@@ -108,7 +108,7 @@ const SectExperience = () => {
               isChange 
                 ? "bg-slate-800/80 border-slate-700/50" 
                 : "bg-gradient-to-br from-purple-600/20 via-purple-600/10 to-purple-600/20 border-white/20"
-            } shadow-2xl`}>
+            } `}>
               
               {/* Title and Info */}
               <motion.div
@@ -159,7 +159,7 @@ const SectExperience = () => {
 
               {/* Tabs */}
               <div className="mb-8">
-                <div className={`inline-flex rounded-full ${isChange ? "bg-slate-700/50" : "bg-white/90"} shadow-sm border ${isChange ? "border-slate-600" : "border-purple-100"} overflow-hidden`}>
+                <div className={`inline-flex rounded-full ${isChange ? "bg-slate-700/50" : "bg-white/90"}  border ${isChange ? "border-slate-600" : "border-purple-100"} overflow-hidden`}>
                   {[
                     { key: "overview", label: "Skills Gained" },
                     { key: "certificate", label: "Brevet/Certificate" },
@@ -169,7 +169,7 @@ const SectExperience = () => {
                       onClick={() => setActiveTab(tab.key)}
                       className={`px-4 sm:px-6 py-3 text-sm sm:text-base font-semibold transition-all duration-300 focus:outline-none ${
                         activeTab === tab.key
-                          ? "bg-purple-600 text-white shadow-lg"
+                          ? "bg-purple-600 text-white "
                           : `${isChange ? "text-slate-300 hover:text-white" : "text-gray-600 hover:text-purple-700"}`
                       } ${activeTab !== tab.key ? "opacity-80 hover:opacity-100" : ""}`}
                       whileHover={{ y: -1 }}
@@ -205,7 +205,7 @@ const SectExperience = () => {
                               transition={{ delay: index * 0.05 }}
                             >
                               <div className="absolute inset-0 bg-purple-600/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                              <div className="relative px-4 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl text-sm font-semibold text-center shadow-lg group-hover:shadow-xl transition-all duration-300 border border-purple-400/30">
+                              <div className="relative px-4 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl text-sm font-semibold text-center  border border-purple-400/30">
                                 {skill}
                               </div>
                             </motion.div>
@@ -229,7 +229,7 @@ const SectExperience = () => {
 
                         {/* Certificate Placeholder */}
                         <motion.div
-                          className={`relative aspect-video my-4 rounded-2xl overflow-hidden border-2 border-purple-600/30 ${isChange ? "bg-slate-700/50" : "bg-gradient-to-br from-purple-600/20 to-purple-600/10"} flex items-center justify-center min-h-96 sm:min-h-[400px]`}
+                          className={`relative  my-4 rounded-2xl  border-2 border-purple-600/30 ${isChange ? "bg-slate-700/50" : "bg-gradient-to-br from-purple-600/20 to-purple-600/10"} flex items-center justify-center min-h-96 sm:min-h-[400px]`}
                           whileHover={{ scale: 1.02 }}
                           transition={{ duration: 0.3 }}
                         >

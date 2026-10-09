@@ -23,7 +23,7 @@
     "program": "Advanced Concepts & Modern Technologies",
     "location": "Kigali",
     "description": "Advanced training covering modern web development frameworks, backend technologies, and emerging AI fundamentals.",
-    "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Next.js", "AI Fundamentals", "Full Stack Development"],
+    "skills": ["HTML", "CSS", "Figma","JavaScript", "Typescript","React", "Node.js", "Next.js", "Node js " , "mongodb"],
     "certificate": {
       "name": "Advanced Concepts Certificate",
       "image": "/images/klab-cert.png",
